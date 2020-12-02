@@ -1,24 +1,93 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
 
-* Ruby version
+### Association
+- has_many :diaries, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :body_weights, dependent: :destroy
+- has_many :bench_press_records, dependent: :destroy
+- has_many :dead_lift_records, dependent: :destroy
+- has_many :squat_records, dependent: :destroy
 
-* System dependencies
 
-* Configuration
+## diaries テーブル
 
-* Database creation
+| Column               | Type       | Options                        |
+| -------------------- | ---------- | ------------------------------ |
+| title                | string     | null: false                    |
+| target_site          | string     | null: false                    |
+| menu_and_impressions | text       | null: false                    |
+| user                 | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :comments, dependent: :destroy
 
-* Services (job queues, cache servers, search engines, etc.)
+## comments テーブル
 
-* Deployment instructions
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :users
+- belongs_to :diaries
+
+## body_weights テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| body_weights | integer    |                                |
+| day          | date       |                                |
+| user         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## bench_press_records テーブル
+
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| bench_press_records | integer    |                                |
+| day                 | date       |                                |
+| user                | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## dead_lift_records テーブル
+
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| dead_lift_records | integer    |                                |
+| day               | date       |                                |
+| user              | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## squat テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| squat_records | integer    |                                |
+| day           | date       |                                |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
