@@ -56,3 +56,17 @@ footer {
   position: absolute;
   bottom: 0;
 }
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+/* フォーム関連 */
+.form-wrapper{
+  background-color: #f0f0f0f0;
+  padding: 1em;
+  border-radius: 1em;
+}
