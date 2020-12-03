@@ -70,3 +70,27 @@ footer {
   padding: 1em;
   border-radius: 1em;
 }
+
+/* 日記画像 */
+.blog-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.blog-img-content {
+  position: relative;
+}
+
+.blog-img {
+  width: 33vh;
+  height: 33vh;
+}
