@@ -1,0 +1,18 @@
+<header>
+  <div class="heading">
+    <h1 class="title"><%= link_to "FitBlog.", root_path%> </h1>
+  </div>
+  <div class="navbar">
+    <ul class="nav-lists">
+      <% if user_signed_in? %>
+        <li>日記投稿</li>
+        <li>記録</li>
+        <li>マイページ</li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %></li>
+      <% else %>
+        <li><%= link_to "ログイン", new_user_session_path, class: :nav__btn %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: :nav__btn %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
