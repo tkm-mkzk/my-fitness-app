@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @blogs = Blog.all.order('created_at DESC')
   end
@@ -15,6 +17,10 @@ class BlogsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @blog = Blog.find(params[:id])
   end
 
   private
