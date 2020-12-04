@@ -1,0 +1,2 @@
+class BodyWeightsController < ApplicationController
+end
