@@ -1,0 +1,20 @@
+<div class="user-show">
+  <div class="user-box">
+    <h2 class="name">
+      <%= "#{@user.nickname}さんのページ" %>
+    </h2>
+
+    <h2 class="page-heading">
+      <%= "#{@user.nickname}さんの日記一覧"%>
+    </h2>
+    <div class="user__card">
+      <%= render partial: "blogs/blog", collection: @user.blogs %>
+    </div>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %>
+        <%= link_to 'マイページを編集', edit_user_path(@user.id), method: :get %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
