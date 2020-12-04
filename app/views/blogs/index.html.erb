@@ -11,17 +11,18 @@
             <%= image_tag 'test_image2.png', class: "blog-img" %>
           </div>
         <% end %>
-      <div class='blog-info'>
-        <h3 class='blog-title'>タイトル
-          <%= blog.title %>
-        </h3>
-        <div class='blog-target_site'>鍛えた部位
-          <%= blog.target_site %>
+        <div class='blog-info'>
+          <h3 class='blog-title'>タイトル
+            <%= blog.title %>
+          </h3>
+          <div class='blog-target_site'>鍛えた部位
+            <%= blog.target_site %>
+          </div>
+          <div class='blog-content'>
+            <%= blog.content %>
+          </div>
         </div>
-        <div class='blog-content'>
-          <%= blog.content %>
-        </div>
-      </div>
+        <%= link_to "by #{blog.user.nickname}", user_path(blog.user.id),method: :get, class: :card__user %>
       <% end %>
     </li>
   <% end %>
