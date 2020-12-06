@@ -46,6 +46,30 @@ li {
   text-decoration: none;
 }
 
+.dropdown {
+  display: flex;
+}
+
+.menu {
+  width: 300px;
+  text-align: center;
+}
+
+.menu-title {
+  color:#090032;
+}
+
+.sub-menu {
+  display: none;
+  background: #B9B9B9;
+  position: relative;
+  z-index:100
+}
+
+.menu:hover .sub-menu {
+  display: inline-block;
+}
+
 /* フッター */
 footer {
   width: 100%;

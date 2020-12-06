@@ -5,13 +5,26 @@
   <div class="navbar">
     <ul class="nav-lists">
       <% if user_signed_in? %>
-        <li><%= link_to "日記投稿", new_blog_path %></li>
-        <li>記録</li>
-        <li><%= link_to 'マイページ', user_path(current_user) %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav__logout' %></li>
+        <li class="menu-title"><%= link_to "日記投稿", new_blog_path %></li>
+        <div class="dropdown">
+          <div class="menu">
+            <li class="menu-title">記録</li>
+              <div class="sub-menu">
+                <ul>
+                  <li><a><%= link_to '体重', user_body_weights_path(current_user), method: :get %></a></li>
+                  <li><a><%= link_to 'ベンチプレス', '#' %></a></li>
+                  <li><a><%= link_to 'デッドリフト', '#' %></a></li>
+                  <li><a><%= link_to 'スクワット', '#' %></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="menu-title"><%= link_to 'マイページ', user_path(current_user) %></li>
+        <li class="menu-title"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav__logout' %></li>
       <% else %>
-        <li><%= link_to "ログイン", new_user_session_path, class: 'nav__btn' %></li>
-        <li><%= link_to "新規登録", new_user_registration_path, class: 'nav__btn' %></li>
+        <li class="menu-title"><%= link_to "ログイン", new_user_session_path, class: 'nav__btn' %></li>
+        <li class="menu-title"><%= link_to "新規登録", new_user_registration_path, class: 'nav__btn' %></li>
       <% end %>
     </ul>
   </div>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :bodyweights, only: [:index, :create, :update, :destroy]
+    resources :body_weights, only: [:index, :create, :update, :destroy]
   end
 
 end
