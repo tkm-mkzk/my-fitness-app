@@ -1,30 +1,11 @@
-<ul class='blog-lists'>
-
-  <% @blogs.each do |blog| %>
-    <li class='list'>
-      <%= link_to blog_path(blog.id) do %>
-        <% if blog.image.present? %>
-          <div class='blog-img-content'>
-            <%= image_tag blog.image, class: "blog-img" %>
-          </div>
-        <% else %>
-          <div class='blog-img-content'>
-            <%= image_tag 'test_image2.png', class: "blog-img" %>
-          </div>
-        <% end %>
-        <div class='blog-info'>
-          <h3 class='blog-title'>タイトル
-            <%= blog.title %>
-          </h3>
-          <div class='blog-target_site'>鍛えた部位
-            <%= blog.target_site %>
-          </div>
-          <div class='blog-content'>
-            <%= blog.content %>
-          </div>
-        </div>
-        <%= link_to "by #{blog.user.nickname}", user_path(blog.user.id),method: :get, class: :card__user %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class='container'>
+  <div class="row blog justify-content-center">
+    <% if @blogs.count == 0 %>
+      <div class = 'no-hit '>
+        <p>日記は見つかりません</p>
+      </div>
+    <% else %>
+      <%= render @blogs %>
+    <% end %>
+  </div>
+</div>

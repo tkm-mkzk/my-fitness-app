@@ -1,20 +1,28 @@
-<div class="user-show">
+<div class="user-show text-center">
   <div class="user-box">
     <h2 class="name">
       <%= "#{@user.nickname}さんのページ" %>
     </h2>
 
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %>
+        <%= link_to 'プロフィール編集', edit_user_registration_path(@user), method: :get, class: 'btn btn-sm btn-outline-secondary' %>
+      <% end %>
+    <% end %>
+
     <h2 class="page-heading">
       <%= "#{@user.nickname}さんの日記一覧"%>
     </h2>
-    <div class="user__card">
-      <%= render partial: "blogs/blog", collection: @user.blogs %>
+    <div class='container'>
+      <div class="row blog justify-content-center">
+        <% if @blogs.count == 0 %>
+          <div class = 'no-hit'>
+            <p>日記は見つかりません</p>
+          </div>
+        <% else %>
+          <%= render @blogs %>
+        <% end %>
+      </div>
     </div>
-
-    <% if user_signed_in? %>
-      <% if current_user.id == @user.id %>
-        <%= link_to 'マイページを編集', edit_user_path(@user.id), method: :get %>
-      <% end %>
-    <% end %>
   </div>
 </div>

@@ -1,21 +1,23 @@
-<div class="blog-show">
+<div class="blog-show text-center">
   <div class="blog-box">
-    <% if @blog.image.present? %>
-      <div class='blog-img-content'>
-        <%= image_tag @blog.image, class: "blog-img" %>
-      </div>
-    <% else %>
-      <div class='blog-img-content'>
-        <%= image_tag 'test_image2.png', class: "blog-img" %>
-      </div>
-    <% end %>
     <h2 class="name">
       <%= @blog.title %>
     </h2>
+    <% if @blog.image.present? %>
+      <div class='blog-img-content'>
+        <%= image_tag @blog.image, class: "blog-img", width: '30%' %>
+      </div>
+    <% else %>
+      <div class='blog-img-content'>
+        <%= image_tag 'no_image.png', class: "blog-img", width: '30%' %>
+      </div>
+    <% end %>
     <div class="blog-target-site-box">
       <span class="blog-target-site">
         <%= @blog.target_site %>
       </span>
+    </div>
+    <div>
       <span class="blog-postage">
         <%= @blog.content %>
       </span>

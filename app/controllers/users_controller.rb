@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_blog, only: [:show, :edit, :update]
+  before_action :authenticate_user!, except: :show
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
+    @blogs = @user.blogs
   end
 
   def edit
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to root_path
     else
-      redirect_to 'show'
+      redirect_to edit_user_registration_path(@user)
     end
   end
 
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :email)
   end
 
-  def set_blog
+  def set_user
     @user = User.find(params[:id])
   end
 end
