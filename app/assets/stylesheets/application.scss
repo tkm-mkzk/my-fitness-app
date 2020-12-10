@@ -487,6 +487,15 @@ template {
 [hidden] {
   display: none;
 }
+
+// フラッシュメッセージ //
+#flash-message{
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+}
+
 //フォーム関連//
 .form-wrapper{
   background-color: #e0e0e0;

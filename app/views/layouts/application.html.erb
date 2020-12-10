@@ -16,7 +16,10 @@
 
   <body>
     <%= render 'shared/header'%>
-    <%= yield %>
+    <div class ='contents'>
+      <%= render 'shared/notice_alert' %>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer'%>
   </body>
 </html>
