@@ -4,16 +4,20 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+// グラフ
 require("chartkick")
 require("chart.js")
-require("../body_weight")
-
+// 体重関係
+require('javascripts/body_weights/chart-change')
+require('javascripts/body_weights/modal')
+// bootstrap
 import 'bootstrap'
 import '../stylesheets/application'
-
+// フラッシュメッセージを一定時間で消す
+require('layouts/flash-message')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
