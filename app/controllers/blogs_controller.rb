@@ -38,8 +38,8 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    if user_signed_in? && current_user.id == @item.user.id
-      @item.destroy
+    if user_signed_in? && current_user.id == @blog.user.id
+      @blog.destroy
       redirect_to root_path
     end
   end
@@ -47,7 +47,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :target_site, :content, :image).merge(user_id: current_user.id)
+    params.require(:blog).permit(:title, :content, :image, target_site: []).merge(user_id: current_user.id)
   end
 
   def set_blog

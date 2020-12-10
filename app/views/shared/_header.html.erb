@@ -1,18 +1,33 @@
-<header>
-  <div class="heading">
-    <h1 class="title"><%= link_to "FitBlog.", root_path%> </h1>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark  mb-3 sticky-top">
+  <div>
+    <%= link_to "Big3Blog.", root_path, class: "navbar-brand", style: "font-size: 30px;"%>
   </div>
-  <div class="navbar">
-    <ul class="nav-lists">
-      <% if user_signed_in? %>
-        <li><%= link_to "日記投稿", new_blog_path %></li>
-        <li>記録</li>
-        <li><%= link_to 'マイページ', user_path(current_user) %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav__logout' %></li>
-      <% else %>
-        <li><%= link_to "ログイン", new_user_session_path, class: 'nav__btn' %></li>
-        <li><%= link_to "新規登録", new_user_registration_path, class: 'nav__btn' %></li>
-      <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+  <ul class="navbar-nav">
+    <% if user_signed_in? %>
+      <li class="nav-item active">
+        <%= link_to "New blog", new_blog_path, class: "nav-link active" %>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Record
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to 'Body weight', user_body_weights_path(current_user), method: :get, class: "dropdown-item" %>
+          <%= link_to 'Bench press', '#', class: "dropdown-item" %>
+          <%= link_to 'Dead lift', '#', class: "dropdown-item" %>
+          <%= link_to 'Squat', '#', class: "dropdown-item" %>
+        </div>
+      </li>
+      <li><%= link_to 'My page', user_path(current_user), class: "nav-link active" %></li>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link active" %></li>
+    <% else %>
+      <li><%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
+      <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %></li>
+    <% end %>
     </ul>
   </div>
-</header>
+</nav>

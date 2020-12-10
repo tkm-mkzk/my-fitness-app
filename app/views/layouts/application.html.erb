@@ -5,13 +5,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://www.gstatic.com.charts/loader.js"></script>
   </head>
 
   <body>
     <%= render 'shared/header'%>
-    <%= yield %>
+    <div class ='contents'>
+      <%= render 'shared/notice_alert' %>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer'%>
   </body>
 </html>
