@@ -19,13 +19,13 @@ module BodyWeightsHelper
       line_chart user.body_weights.group_by_day(:day, range: range).average(:weight).compact, min: chart_min, max: chart_max
     elsif period == 'week'
       line_chart user.body_weights.group_by_week(:day, range: range).average(:weight).compact, min: chart_min,
-                                                                                              max: chart_max
+                                                                                               max: chart_max
     elsif period == 'month'
       line_chart user.body_weights.group_by_month(:day, range: range).average(:weight).compact, min: chart_min, max: chart_max
     end
   end
 
-  #範囲内に記録があるか確認するメソッド
+  # 範囲内に記録があるか確認するメソッド
   def chart_data?(user, range)
     user.body_weights.where(day: range).present?
   end

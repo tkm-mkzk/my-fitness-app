@@ -17,19 +17,21 @@ class BodyWeightsController < ApplicationController
     last_weight_record = @user.body_weights.order(day: :desc).where('day < ? ', standard_date.beginning_of_week).first
     @last_weight = last_weight_record.weight if last_weight_record
     # 曜日表示用
-    @weeks = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weeks = %w[Sun Mon Tue Wed Thu Fri Sat]
   end
 
   def create
     @body_weight = current_user.body_weights.build(weight_params)
-    return  redirect_to user_body_weights_path(@user), notice: 'Recorded weight' if @body_weight.save
+    return redirect_to user_body_weights_path(@user), notice: 'Recorded weight' if @body_weight.save
+
     # レンダリングでは諸々の変数を設定しないといけないためリダイレクトに設定
-    redirect_to user_body_weights_path(@user), flash: { alert: 'Recording failed',error_messages: @body_weight.errors.full_messages }
+    redirect_to user_body_weights_path(@user), flash: { alert: 'Recording failed', error_messages: @body_weight.errors.full_messages }
   end
 
   def update
     @body_weight = BodyWeight.find(params[:id])
-    return  redirect_to user_body_weights_path(@user), notice: 'Edited' if @body_weight.update(weight_params)
+    return redirect_to user_body_weights_path(@user), notice: 'Edited' if @body_weight.update(weight_params)
+
     redirect_to user_body_weights_path(@user), flash: { alert: 'Editing failed', error_messages: @body_weight.errors.full_messages }
   end
 
