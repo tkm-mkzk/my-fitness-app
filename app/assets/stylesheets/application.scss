@@ -488,6 +488,11 @@ template {
   display: none;
 }
 
+// 全般
+.container {
+  margin-top: 80px;
+}
+
 // フラッシュメッセージ //
 #flash-message{
   position: fixed;
