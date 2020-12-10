@@ -1,5 +1,5 @@
 class BodyWeightsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_user
   before_action :allow_correct_user, only: [:create, :update, :destroy]
 
