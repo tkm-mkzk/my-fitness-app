@@ -15,7 +15,7 @@ module BenchPressWeightRecordsHelper
   def bench_press_chart_graph(user, range)
     chart_max = bench_press_max_value(user, range)
     chart_min = bench_press_min_value(user, range)
-    line_chart user.bench_press_weight_records.group_by_day(:bench_press_day, range: range, series: false).sum(:bench_press_weight), min: chart_min, max: chart_max, points: false
+    line_chart user.bench_press_weight_records.group_by_day(:bench_press_day, range: range, series: false).sum(:bench_press_weight), min: chart_min, max: chart_max, points: false, colors: ["orange"]
   end
 
   # 範囲内に記録があるか確認するメソッド
