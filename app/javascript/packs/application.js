@@ -13,6 +13,9 @@ require("chart.js")
 // 体重関係
 require('body_weights/chart-change')
 require('body_weights/modal')
+// ベンチプレス関係
+require('bench_press_weight_records/chart-change')
+require('bench_press_weight_records/modal')
 // bootstrap
 import 'bootstrap'
 import '../stylesheets/application'

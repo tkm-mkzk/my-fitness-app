@@ -9,15 +9,15 @@
 | encrypted_password | string | null: false |
 
 ### Association
-- has_many :diaries, dependent: :destroy
+- has_many :blogs, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - has_many :body_weights, dependent: :destroy
-- has_many :bench_press_records, dependent: :destroy
-- has_many :dead_lift_records, dependent: :destroy
-- has_many :squat_records, dependent: :destroy
+- has_many :bench_press_weight_records, dependent: :destroy
+- has_many :dead_lift_weight_records, dependent: :destroy
+- has_many :squat_weight_records, dependent: :destroy
 
 
-## diaries テーブル
+## blogs テーブル
 
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
@@ -42,13 +42,13 @@
 ### Association
 
 - belongs_to :users
-- belongs_to :diaries
+- belongs_to :blogs
 
 ## body_weights テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| body_weights | integer    |                                |
+| weight       | integer    |                                |
 | day          | date       |                                |
 | user         | references | null: false, foreign_key: true |
 
@@ -56,36 +56,36 @@
 
 - belongs_to :user
 
-## bench_press_records テーブル
+## bench_press_weight_record テーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
-| bench_press_records | integer    |                                |
-| day                 | date       |                                |
+| bench_press_weight  | integer    |                                |
+| bench_press_day     | date       |                                |
 | user                | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 
-## dead_lift_records テーブル
+## dead_lift_weight_record テーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
-| dead_lift_records | integer    |                                |
-| day               | date       |                                |
+| dead_lift_weight  | integer    |                                |
+| dead_lift_day     | date       |                                |
 | user              | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 
-## squat テーブル
+## squat_weight_record テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| squat_records | integer    |                                |
-| day           | date       |                                |
+| squat_weight  | integer    |                                |
+| squat_day     | date       |                                |
 | user          | references | null: false, foreign_key: true |
 
 ### Association

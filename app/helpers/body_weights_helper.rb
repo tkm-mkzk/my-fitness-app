@@ -15,7 +15,7 @@ module BodyWeightsHelper
   def chart_graph(user, range)
     chart_max = max_value(user, range)
     chart_min = min_value(user, range)
-    line_chart user.body_weights.group_by_day(:day, range: range, series: false).average(:weight).compact, min: chart_min, max: chart_max, points: false
+    line_chart user.body_weights.group_by_day(:day, range: range, series: false).sum(:weight), min: chart_min, max: chart_max, points: false
   end
 
   # 範囲内に記録があるか確認するメソッド
