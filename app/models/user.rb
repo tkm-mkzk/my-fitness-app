@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :body_weights, dependent: :destroy
-  has_many :bench_press_records, dependent: :destroy
 
   validates :nickname, presence: true
 

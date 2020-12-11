@@ -11,8 +11,8 @@ require("channels")
 require("chartkick")
 require("chart.js")
 // 体重関係
-require('javascripts/body_weights/chart-change')
-require('javascripts/body_weights/modal')
+require('body_weights/chart-change')
+require('body_weights/modal')
 // bootstrap
 import 'bootstrap'
 import '../stylesheets/application'

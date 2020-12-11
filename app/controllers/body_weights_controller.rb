@@ -5,13 +5,13 @@ class BodyWeightsController < ApplicationController
 
   def index
     @body_weight = BodyWeight.new
-    # @body_weights = current_user.body_weights
+    @body_weights = current_user.body_weights
     standard_date = Time.current
     standard_date = Time.current.ago(params[:date].to_i.weeks) if params[:date]
     # 表示用範囲設定
     @date_range = standard_date.beginning_of_week.to_date..standard_date.end_of_week.to_date # 一週間分
     @dailychart_range = standard_date.all_week # 一週間分
-    @weeklychart_range = standard_date.ago(1.month).beginning_of_month..standard_date.end_of_month # 二ヶ月分
+    @weeklychart_range = standard_date.all_month # 一ヶ月分
     @monthlychart_range = standard_date.all_year # 一年分
     # 一週間より一つ前のレコードの体重の取得（前回比用）
     last_weight_record = @user.body_weights.order(day: :desc).where('day < ? ', standard_date.beginning_of_week).first
@@ -23,7 +23,6 @@ class BodyWeightsController < ApplicationController
   def create
     @body_weight = current_user.body_weights.build(weight_params)
     return redirect_to user_body_weights_path(@user), notice: 'Recorded weight' if @body_weight.save
-
     # レンダリングでは諸々の変数を設定しないといけないためリダイレクトに設定
     redirect_to user_body_weights_path(@user), flash: { alert: 'Recording failed', error_messages: @body_weight.errors.full_messages }
   end
