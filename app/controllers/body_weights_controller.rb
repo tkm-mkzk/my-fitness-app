@@ -23,6 +23,7 @@ class BodyWeightsController < ApplicationController
   def create
     @body_weight = current_user.body_weights.build(weight_params)
     return redirect_to user_body_weights_path(@user), notice: 'Recorded body weight' if @body_weight.save
+
     # レンダリングでは諸々の変数を設定しないといけないためリダイレクトに設定
     redirect_to user_body_weights_path(@user), flash: { alert: 'Recording failed', error_messages: @body_weight.errors.full_messages }
   end
@@ -30,6 +31,7 @@ class BodyWeightsController < ApplicationController
   def update
     @body_weight = BodyWeight.find(params[:id])
     return redirect_to user_body_weights_path(@user), notice: 'Edited' if @body_weight.update(weight_params)
+
     redirect_to user_body_weights_path(@user), flash: { alert: 'Editing failed', error_messages: @body_weight.errors.full_messages }
   end
 
