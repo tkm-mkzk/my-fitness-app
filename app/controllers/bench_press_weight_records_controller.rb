@@ -22,14 +22,20 @@ class BenchPressWeightRecordsController < ApplicationController
 
   def create
     @bench_press_weight_record = current_user.bench_press_weight_records.build(bench_press_weight_params)
-    return redirect_to user_bench_press_weight_records_path(@user), notice: 'Recorded bench press weight' if @bench_press_weight_record.save
+    if @bench_press_weight_record.save
+      return redirect_to user_bench_press_weight_records_path(@user), notice: 'Recorded bench press weight'
+    end
+
     # レンダリングでは諸々の変数を設定しないといけないためリダイレクトに設定
     redirect_to user_bench_press_weight_records_path(@user), flash: { alert: 'Recording failed', error_messages: @bench_press_weight_record.errors.full_messages }
   end
 
   def update
     @bench_press_weight = BenchPressWeightRecord.find(params[:id])
-    return redirect_to user_bench_press_weight_records_path(@user), notice: 'Edited' if @bench_press_weight.update(bench_press_weight_params)
+    if @bench_press_weight.update(bench_press_weight_params)
+      return redirect_to user_bench_press_weight_records_path(@user), notice: 'Edited'
+    end
+
     redirect_to user_bench_press_weight_records_path(@user), flash: { alert: 'Editing failed', error_messages: @bench_press_weight_record.errors.full_messages }
   end
 

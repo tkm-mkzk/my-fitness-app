@@ -1,0 +1,113 @@
+
+<div class='container-fluid'>
+  <h2 class='text-center'>Bench press weight record</h2>
+  <div class='row'>
+    <div class='col-lg-7'>
+      <div class='chart-wrapper'>
+        <div class="btn-group btn-group-sm chart-btn-group" role="group">
+          <button type="button" id ='daily-bench-press-chart-btn' class="btn btn-warning active">week</button>
+          <button type="button" id ='weekly-bench-press-chart-btn' class="btn btn-warning">month</button>
+          <button type="button" id ='monthly-bench-press-chart-btn' class="btn btn-warning">year</button>
+        </div>
+        <div class='chart-box'>
+          <span class=chart-label>kg</span>
+          <div class='weight-chart active daily-chart' id='daily-bench-press-chart'>
+            <%= bench_press_chart_graph(@user, @dailychart_range) %>
+          </div>
+          <div class='weight-chart weekly-chart' id='weekly-bench-press-chart'>
+            <%= bench_press_chart_graph(@user, @weeklychart_range) %>
+          </div>
+          <div class='weight-chart monthly-chart' id='monthly-bench-press-chart'>
+            <%= bench_press_chart_graph(@user, @monthlychart_range) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-lg-5'>
+      <div class='table-wrapper'>
+        <div class='weight-table-wrapper'>
+          <div class='next-back'>
+            <%= link_to "< Last week",user_bench_press_weight_records_path(@user, date: params[:date].to_i + 1) %>
+            <%= link_to "Next week >",user_bench_press_weight_records_path(@user, date: params[:date].to_i - 1) %>
+          </div>
+          <table class='weight-table'>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th class='text-center'>Weight</th>
+                <th>Comp</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @date_range.each do |date| %>
+                <tr>
+                  <td><%= date.strftime("%-m/%d(#{@weeks[date.wday]})")%></td>
+                  <% @user.bench_press_weight_records.each do |bench_press_weight_record| %>
+                    <% if bench_press_weight_record.bench_press_day == date %>
+                      <% if current_user == @user %>
+                        <td class='weight-edit-form' >
+                          <%= form_with model: [@user, bench_press_weight_record] do |f|%>
+                            <%= f.number_field :bench_press_weight, step: '0.1', class: 'weight-edit-field' %>
+                            <span class='weight-edit-icon'><i class="fas fa-edit"></i></span>
+                            <span> kg</span><br>
+                            <%= f.submit 'Edit', class: ' blue-btn btn-sm weight-edit-btn' %>
+                          <% end %>
+                        </td>
+                      <% else %>
+                        <td class='text-center'><%= bench_press_weight_record.bench_press_weight %><span> kg</span></td>
+                      <% end %>
+                      <td>
+                        <% if @last_weight.present? %>
+                          <% if (bench_press_weight_record.bench_press_weight - @last_weight) > 0%>
+                            <p class='positive-weight'>+<%= (bench_press_weight_record.bench_press_weight - @last_weight).round(1) %> kg</p>
+                          <% else%>
+                            <p class='negative-weight'><%= (bench_press_weight_record.bench_press_weight - @last_weight).round(1) %> kg</p>
+                          <% end %>
+                        <% end %>
+                      </td>
+                      <% @last_weight = bench_press_weight_record.bench_press_weight%>
+                      <% if current_user == @user %>
+                        <td>
+                          <%= link_to user_bench_press_weight_record_path(user_id: @user, id: bench_press_weight_record), method: :delete, data: { confirm: 'Do you want to delete？' } do %>
+                            <button type="button" class="btn btn-outline-danger btn-sm " >✕</button>
+                          <% end %>
+                        </td>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <input type="button" id="new-bench-press-weight-btn" class='btn-default btn-lg blue-btn float-right bottom text-center' style="margin-top: 15px;" value='Record weight' >
+    </div>
+  </div>
+</div>
+
+<div id="bench-press-weight-modal" class="body-weight-modal">
+  <% if user_signed_in? %>
+    <% if current_user == @user %>
+      <div class='form-wrapper weight-new-form'>
+        <%= form_with model: [@user, @bench_press_weight_record], local: true do |f| %>
+          <div>
+          <%= f.label :bench_press_day, '日付'%>
+          <%= f.date_field :bench_press_day, value: Date.today%>
+          </div>
+
+          <div>
+          <%= f.label :bench_press_weight, '体重'%>
+          <%= f.number_field :bench_press_weight, step: '0.1' %><span> kg</span>
+          </div>
+
+          <div class='text-right'>
+            <%= f.submit 'Record', class: 'blue-btn btn-default'%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
