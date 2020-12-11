@@ -12,17 +12,10 @@ module BodyWeightsHelper
   end
 
   # チャート表示用
-  def chart_graph(period, user, range)
+  def chart_graph(user, range)
     chart_max = max_value(user, range)
     chart_min = min_value(user, range)
-    if period == 'day'
-      line_chart user.body_weights.group_by_day(:day, range: range).average(:weight).compact, min: chart_min, max: chart_max
-    elsif period == 'week'
-      line_chart user.body_weights.group_by_week(:day, range: range).average(:weight).compact, min: chart_min,
-                                                                                               max: chart_max
-    elsif period == 'month'
-      line_chart user.body_weights.group_by_month(:day, range: range).average(:weight).compact, min: chart_min, max: chart_max
-    end
+    line_chart user.body_weights.group_by_day(:day, range: range, series: false).sum(:weight), min: chart_min, max: chart_max, points: false
   end
 
   # 範囲内に記録があるか確認するメソッド

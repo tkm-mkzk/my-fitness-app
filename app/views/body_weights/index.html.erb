@@ -1,29 +1,29 @@
 <div class='container-fluid'>
   <h2 class='text-center'>Body weight record</h2>
   <div class='row'>
-    <div class='col-lg-7'>
+    <div class='col-lg-7 col-12'>
       <div class='chart-wrapper'>
         <div class="btn-group btn-group-sm chart-btn-group" role="group">
-          <button type="button" id ='daily-chart-btn' class="btn btn-primary active">day</button>
-          <button type="button" id ='weekly-chart-btn' class="btn btn-primary">week</button>
-          <button type="button" id ='monthly-chart-btn' class="btn btn-primary">month</button>
+          <button type="button" id ='daily-chart-btn' class="btn btn-primary active">week</button>
+          <button type="button" id ='weekly-chart-btn' class="btn btn-primary">month</button>
+          <button type="button" id ='monthly-chart-btn' class="btn btn-primary">year</button>
         </div>
         <div class='chart-box'>
           <span class=chart-label>kg</span>
           <div class='weight-chart active daily-chart' id='daily-chart'>
-            <%= chart_graph('day', @user, @dailychart_range) %>
+            <%= chart_graph(@user, @dailychart_range) %>
           </div>
           <div class='weight-chart weekly-chart' id='weekly-chart'>
-            <%= chart_graph('week', @user, @weeklychart_range) %>
+            <%= chart_graph(@user, @weeklychart_range) %>
           </div>
           <div class='weight-chart monthly-chart' id='monthly-chart'>
-            <%= chart_graph('month', @user, @monthlychart_range) %>
+            <%= chart_graph(@user, @monthlychart_range) %>
           </div>
         </div>
       </div>
     </div>
 
-    <div class='col-lg-5'>
+    <div class='col-lg-5 col-12'>
       <div class='table-wrapper'>
         <div class='weight-table-wrapper'>
           <div class='next-back'>
@@ -35,7 +35,8 @@
               <tr>
                 <th>Date</th>
                 <th class='text-center'>Weight</th>
-                <th>Comparison</th>
+                <th>Comp</th>
+                <th>delete</th>
               </tr>
             </thead>
             <tbody>
