@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :body_weights, dependent: :destroy
   has_many :bench_press_weight_records, dependent: :destroy
   has_many :dead_lift_weight_records, dependent: :destroy
+  has_many :squat_weight_records, dependent: :destroy
 
   validates :nickname, presence: true
 

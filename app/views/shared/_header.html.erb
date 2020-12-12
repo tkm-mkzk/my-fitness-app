@@ -19,7 +19,7 @@
           <%= link_to 'Body weight', user_body_weights_path(current_user), method: :get, class: "dropdown-item" %>
           <%= link_to 'Bench press', user_bench_press_weight_records_path(current_user), class: "dropdown-item" %>
           <%= link_to 'Dead lift', user_dead_lift_weight_records_path(current_user), class: "dropdown-item" %>
-          <%= link_to 'Squat', '#', class: "dropdown-item" %>
+          <%= link_to 'Squat', user_squat_weight_records_path(current_user), class: "dropdown-item" %>
         </div>
       </li>
       <li><%= link_to 'My page', user_path(current_user), class: "nav-link active" %></li>

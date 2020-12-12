@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :body_weights, only: [:index, :create, :update, :destroy]
     resources :bench_press_weight_records, only: [:index, :create, :update, :destroy]
     resources :dead_lift_weight_records, only: [:index, :create, :update, :destroy]
+    resources :squat_weight_records, only: [:index, :create, :update, :destroy]
   end
 
 end
