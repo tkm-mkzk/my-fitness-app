@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_045729) do
+ActiveRecord::Schema.define(version: 2020_12_12_055244) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -80,6 +80,15 @@ ActiveRecord::Schema.define(version: 2020_12_12_045729) do
     t.index ["user_id"], name: "index_dead_lift_weight_records_on_user_id"
   end
 
+  create_table "squat_weight_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "squat_weight", null: false
+    t.date "squat_day", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_squat_weight_records_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -100,4 +109,5 @@ ActiveRecord::Schema.define(version: 2020_12_12_045729) do
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"
   add_foreign_key "dead_lift_weight_records", "users"
+  add_foreign_key "squat_weight_records", "users"
 end
