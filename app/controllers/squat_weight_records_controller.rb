@@ -22,9 +22,7 @@ class SquatWeightRecordsController < ApplicationController
 
   def create
     @squat_weight_record = current_user.squat_weight_records.build(squat_weight_params)
-    if @squat_weight_record.save
-      return redirect_to user_squat_weight_records_path(@user), notice: 'Recorded squat weight'
-    end
+    return redirect_to user_squat_weight_records_path(@user), notice: 'Recorded squat weight' if @squat_weight_record.save
 
     # レンダリングでは諸々の変数を設定しないといけないためリダイレクトに設定
     redirect_to user_squat_weight_records_path(@user), flash: { alert: 'Recording failed', error_messages: @squat_weight_record.errors.full_messages }
@@ -32,9 +30,7 @@ class SquatWeightRecordsController < ApplicationController
 
   def update
     @squat_weight = SquatWeightRecord.find(params[:id])
-    if @squat_weight.update(squat_weight_params)
-      return redirect_to user_squat_weight_records_path(@user), notice: 'Edited'
-    end
+    return redirect_to user_squat_weight_records_path(@user), notice: 'Edited' if @squat_weight.update(squat_weight_params)
 
     redirect_to user_squat_weight_records_path(@user), flash: { alert: 'Editing failed', error_messages: @squat_weight_record.errors.full_messages }
   end
