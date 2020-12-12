@@ -17,8 +17,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to 'Body weight', user_body_weights_path(current_user), method: :get, class: "dropdown-item" %>
-          <%= link_to 'Bench press', '#', class: "dropdown-item" %>
-          <%= link_to 'Dead lift', '#', class: "dropdown-item" %>
+          <%= link_to 'Bench press', user_bench_press_weight_records_path(current_user), class: "dropdown-item" %>
+          <%= link_to 'Dead lift', user_dead_lift_weight_records_path(current_user), class: "dropdown-item" %>
           <%= link_to 'Squat', '#', class: "dropdown-item" %>
         </div>
       </li>
@@ -28,29 +28,6 @@
       <li><%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
       <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %></li>
     <% end %>
-    <ul class="navbar-nav">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "New blog", new_blog_path, class: "nav-link active" %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Record
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Body weight', user_body_weights_path(current_user), method: :get, class: "dropdown-item" %>
-            <%= link_to 'Bench press', user_bench_press_weight_records_path(current_user), class: "dropdown-item" %>
-            <%= link_to 'Dead lift', '#', class: "dropdown-item" %>
-            <%= link_to 'Squat', '#', class: "dropdown-item" %>
-          </div>
-        </li>
-        <li><%= link_to 'My page', user_path(current_user), class: "nav-link active" %></li>
-        <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link active" %></li>
-      <% else %>
-        <li><%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
-        <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %></li>
-      <% end %>
-
     </ul>
   </div>
 </nav>
