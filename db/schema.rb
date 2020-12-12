@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_065754) do
+ActiveRecord::Schema.define(version: 2020_12_12_045729) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_065754) do
   end
 
   create_table "bench_press_weight_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "bench_press_weight", null: false
+    t.float "bench_press_weight", null: false
     t.date "bench_press_day", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_065754) do
   end
 
   create_table "body_weights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "weight", null: false
+    t.float "weight", null: false
     t.date "day", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2020_12_11_065754) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["blog_id"], name: "index_comments_on_blog_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "dead_lift_weight_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "dead_lift_weight", null: false
+    t.date "dead_lift_day", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_dead_lift_weight_records_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,4 +99,5 @@ ActiveRecord::Schema.define(version: 2020_12_11_065754) do
   add_foreign_key "body_weights", "users"
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"
+  add_foreign_key "dead_lift_weight_records", "users"
 end

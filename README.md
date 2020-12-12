@@ -48,7 +48,7 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| weight       | integer    |                                |
+| weight       | float      |                                |
 | day          | date       |                                |
 | user         | references | null: false, foreign_key: true |
 
@@ -60,7 +60,7 @@
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
-| bench_press_weight  | integer    |                                |
+| bench_press_weight  | float      |                                |
 | bench_press_day     | date       |                                |
 | user                | references | null: false, foreign_key: true |
 
@@ -72,7 +72,7 @@
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
-| dead_lift_weight  | integer    |                                |
+| dead_lift_weight  | float      |                                |
 | dead_lift_day     | date       |                                |
 | user              | references | null: false, foreign_key: true |
 
@@ -84,7 +84,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| squat_weight  | integer    |                                |
+| squat_weight  | float      |                                |
 | squat_day     | date       |                                |
 | user          | references | null: false, foreign_key: true |
 

@@ -16,6 +16,9 @@ require('body_weights/modal')
 // ベンチプレス関係
 require('bench_press_weight_records/chart-change')
 require('bench_press_weight_records/modal')
+// デッドリフト関係
+require('dead_lift_weight_records/chart-change')
+require('dead_lift_weight_records/modal')
 // bootstrap
 import 'bootstrap'
 import '../stylesheets/application'
