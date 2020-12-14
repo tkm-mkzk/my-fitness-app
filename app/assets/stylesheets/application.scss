@@ -508,10 +508,44 @@ template {
   border-radius: 1em;
 }
 
+// ヘッダー
+.header {
+  position: fixed;
+  top: 0;
+  opacity: 0.55;
+  width: 100%;
+  z-index:10000;
+}
+
+
 // フッター
 .footer {
   padding: 5px;
 }
+
+// トップ
+.video-content {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sub {
+  z-index: 2000;
+  position: fixed;
+
+}
+
+.new-blogs {
+  font-size: 40px;;
+}
+
+
+
+
+
 
 //ボタンの設定//
 .btn-default{
@@ -545,39 +579,6 @@ template {
   &:active{
     box-shadow: 0px 0px 0px black;
     transform: scale(0.95);
-  }
-}
-.blue-outline-btn{
-  border-color: #3368ff;
-  font-weight: bold;
-  border-radius: 10px;
-  &:hover{
-    background-color: #3368ff;
-    color: #fff;
-    box-shadow: 0px 0px 3px black;
-  }
-  &:active{
-    box-shadow: 0px 0px 0px black;
-    transform: scale(0.95);
-  }
-}
-
-.cancel-round-btn{
-  background-color: #fff;
-  font-weight: bold ;
-  border-radius: 50rem ;
-  color: #737373;
-  border-color: #737373;
-  text-decoration: none;
-  &:hover{
-    color: #fff;
-    background-color: #737373;
-    border-color: #737373;
-    text-decoration: none;
-  }
-  &:active{
-    -webkit-transform: translate(0px, 2px);
-            transform: translate(0px, 2px);
   }
 }
 
