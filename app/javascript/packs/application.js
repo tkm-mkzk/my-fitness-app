@@ -27,8 +27,6 @@ import 'bootstrap'
 import '../stylesheets/application'
 // フラッシュメッセージを一定時間で消す
 require('layouts/flash-message')
-// videoの高さ分だけコンテンツを下げる
-// require('layouts/top')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

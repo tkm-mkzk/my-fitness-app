@@ -72,3 +72,6 @@ gem 'image_processing', '~> 1.2'
 gem 'chartkick'
 gem 'groupdate'
 gem 'gon'
+
+# ページネーション
+gem 'kaminari'

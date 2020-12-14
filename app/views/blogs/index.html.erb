@@ -1,23 +1,18 @@
-<div class=''>
-  <div class=''>
-    <div class=''>
-      <div id ="video" class="video-content embed-responsive embed-responsive-16by9">
-        <%= video_tag("/videos/training.mp4", autoplay: :true, loop: :true, muted: :true, class: 'embed-responsive-item ') %>
-      <div class="sub">
-        <div class="new-blogs text-center">
-          New blogs
-        </div>
-        <div class="d-flex flex-row top-blog-lists col-xs-12">
-          <% if @blogs.count == 0 %>
-            <div class = 'no-hit '>
-              <p>日記は見つかりません</p>
-            </div>
-          <% else %>
-            <%= render @blogs %>
-          <% end %>
-        </div>
-      </div>
-      </div>
+<div class='top-page'>
+  <div class="wrap">
+  <video id="bg-video" src="/videos/training.mp4" poster="men.jpg" autoplay loop muted></video>
+    <div class="header-title">
+      <p>
+        Big3Blog.<br>
+        Let's write a muscle blog.
+      </p>
     </div>
   </div>
-</div>
+  <p class='explanation'>
+    このアプリで、体重、ベンチプレス、デッドリフト、スクワットの記録をつけることができ、トレーニングの記録をブログとして投稿することができます。
+  </p>
+  <div class='link'>
+    <%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
+    <%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %>
+  <div>
+<div>

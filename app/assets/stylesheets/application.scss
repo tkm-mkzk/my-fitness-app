@@ -490,7 +490,8 @@ template {
 
 // 全般
 .container {
-  margin-top: 80px;
+  margin: 0;
+  padding: 0;
 }
 
 // フラッシュメッセージ //
@@ -514,38 +515,100 @@ template {
   top: 0;
   opacity: 0.55;
   width: 100%;
-  z-index:10000;
+  z-index:1000;
 }
 
 
 // フッター
 .footer {
   padding: 5px;
+  font-size: 15px;
+  opacity: 0.55;
+  z-index:1000;
 }
 
 // トップ
-.video-content {
+/* ----- 背景用の動画ファイル ----- */
+#bg-video{
   position: fixed;
-  top: 0;
-  margin: 0;
-  width: 100%;
-  z-index: 1000;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background: url('men.jpg') no-repeat;
+  background-size: cover;
+}
+ /* ----- 背景の上に表示させたいコンテンツ ----- */
+.header-title{
+  position: relative; /*必ず必要*/
+  z-index: 2; /*必ず必要*/
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+  margin-top: 200px;
+  font-size: 100px;
+  color:white;
 }
 
-.sub {
-  z-index: 2000;
-  position: fixed;
-
+.wrap {
+  position: relative;
 }
 
-.new-blogs {
-  font-size: 40px;;
+.explanation {
+  position: relative; /*必ず必要*/
+  z-index: 2; /*必ず必要*/
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color:white;
 }
 
+.link {
+  position: relative; /*必ず必要*/
+  z-index: 2; /*必ず必要*/
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  color:white;
+  margin-bottom: 200px;
+}
 
+.new-blogs-title {
+  font-size: 40px;
+  text-align: center;
+}
 
+.blogs {
+  display: flex;
+  min-width: 100px;
+}
 
+// 重さ
+.weight-page {
+  margin-top: 100px;
+}
 
+.weight-title {
+  font-size: 40px;
+}
 
 //ボタンの設定//
 .btn-default{
