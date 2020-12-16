@@ -488,6 +488,11 @@ template {
   display: none;
 }
 
+* {
+  margin:0;
+  padding:0;
+}
+
 // 全般
 .container {
   margin: 0;
@@ -499,7 +504,6 @@ template {
   position: fixed;
   width: 100%;
   z-index: 100;
-  text-align: center;
 }
 
 //フォーム関連//
@@ -508,6 +512,44 @@ template {
   padding: 1em;
   border-radius: 1em;
 }
+
+.signup-form {
+  margin: 130px 0 0 40px;
+}
+
+.login-form {
+  margin: 130px 0 0 40px;
+}
+
+.blog-new-form {
+  margin: 130px 0 0 40px;
+}
+
+.blog-edit-form {
+  margin: 130px 0 0 40px;
+}
+
+.form-wrap {
+  width: 60%;
+}
+
+.form-header-text {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.input-default {
+  border-color: black;
+}
+
+.with {
+  font-weight: bold;
+}
+
+.indispensable {
+  color: red;
+}
+
 
 // ヘッダー
 .header {
@@ -552,7 +594,7 @@ template {
   text-align:center;
   margin: auto;
   margin-top: 200px;
-  font-size: 100px;
+  font-size: 89px;
   color:white;
 }
 
@@ -561,8 +603,8 @@ template {
 }
 
 .explanation {
-  position: relative; /*必ず必要*/
-  z-index: 2; /*必ず必要*/
+  position: relative;
+  z-index: 2;
   display: flex;
   width: 60%;
   justify-content: center;
@@ -576,8 +618,8 @@ template {
 }
 
 .link {
-  position: relative; /*必ず必要*/
-  z-index: 2; /*必ず必要*/
+  position: relative;
+  z-index: 2;
   display: flex;
   width: 60%;
   justify-content: center;
@@ -591,6 +633,17 @@ template {
   margin-bottom: 200px;
 }
 
+// ユーザー詳細ページ
+.user-show {
+  margin-top: 100px;
+}
+
+// ユーザー編集ページ
+.user-edit-form {
+  margin: 130px 0 0 40px;
+}
+
+// ブログ関係
 .new-blogs-title {
   font-size: 40px;
   text-align: center;
@@ -608,6 +661,7 @@ template {
 
 .weight-title {
   font-size: 40px;
+  font-weight: bold;
 }
 
 //ボタンの設定//
@@ -644,6 +698,26 @@ template {
     transform: scale(0.95);
   }
 }
+
+.login-btn {
+  background-color: rgb(63, 63, 63);
+  border-radius: 5px;
+  color: white;
+}
+
+.register-btn {
+  background-color: rgb(63, 63, 63);
+  border-radius: 5px;
+  color: white;
+}
+
+.login-btn, .register-btn, .blog-btn, .user-edit-btn {
+  background-color: rgb(63, 63, 63);
+  border-radius: 5px;
+  color: white;
+}
+
+
 
 
 //------------------体重管理-------------------//

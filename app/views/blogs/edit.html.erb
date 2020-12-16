@@ -1,38 +1,53 @@
-<div class='form-wrapper'>
-  <%= form_with model: @blog, local: true do |f| %>
+<div class='blog-edit-form'>
+  <div class='form-wrap'>
+    <%= form_with model: @blog, local: true do |f| %>
 
-  <%= render 'shared/error_messages', model: f.object %>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        Edit blog
+      </h1>
+    </div>
 
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        画像
+    <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="img-upload form-group">
+        <div class="weight-bold-text">
+          画像
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
+
+      <div class="form-group">
+        <%= f.label :title, 'タイトル' %>(<span class="indispensable">必須</span>)
+        <%= f.text_field :title, placeholder: 'タイトルを入力してください', class: 'form-control' %>
       </div>
-    </div>
 
-    <div class="field form-group">
-      <%= f.label :title, 'タイトル' %>
-      <%= f.text_field :title, placeholder: 'タイトルを入力してください', class: 'form-control' %>
-    </div>
+      <div class="checkbox">
+        <%= f.label :target_site, '鍛えた部位'%>(1つ以上<span class="indispensable">必須</span>)<br>
+          <div class="form-inline justify-content-center">
+            <%= f.check_box :target_site, {multiple: true}, "胸", nil %>胸　
+            <%= f.check_box :target_site, {multiple: true}, "腕", nil %>腕　
+            <%= f.check_box :target_site, {multiple: true}, "肩", nil %>肩　
+            <%= f.check_box :target_site, {multiple: true}, "腹", nil %>腹　
+            <%= f.check_box :target_site, {multiple: true}, "背中", nil %>背中　
+            <%= f.check_box :target_site, {multiple: true}, "脚", nil %>脚　
+            <%= f.check_box :target_site, {multiple: true}, "その他", nil %>その他　
+          </div>
+      </div>
 
-    <div class="field form-group">
-      <%= f.label :target_site, '鍛えた部位'%>
-      <%= f.text_field :target_site, placeholder: '鍛えた部位を入力してください', class: 'form-control' %>
-    </div>
+      <div class="form-group">
+        <%= f.label :content, 'メニューの方法' %>(<span class="indispensable">必須</span>)
+        <%= f.text_area :content, class: 'form-control'%>
+      </div>
 
-    <div class="field form-group">
-      <%= f.label :content, 'メニューの方法' %>
-      <%= f.text_area :content, class: 'form-control'%>
-    </div>
-
-    <div class="actions text-right">
-      <%= link_to 'キャンセル', root_path %>
-      <%= f.submit "更新する" %>
-    </div>
-  <% end %>
-</div>
+        <%= link_to 'キャンセル', blog_path(@blog), class: "with" %>
+      <div class=" btn-default blog-btn">
+        <%= f.submit "Edit" %>
+      </div>
+    <% end %>
+  </div>

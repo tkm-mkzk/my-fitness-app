@@ -1,8 +1,14 @@
-<div class='container text-center'>
-  <div class='user_form'>
-    <h2>プロフィール編集</h2>
-
+<div class='user-edit-form'>
+  <div class='form-wrap'>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          Edit user
+        </h1>
+      </div>
+
+
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field form-group">
@@ -21,12 +27,7 @@
 
       <div class="field form-group">
         <%= f.label :password, '新しいパスワード' %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-        <% if @minimum_password_length %>
-          <br />
-          <em>(<%= @minimum_password_length %> 文字以上)</em>
-        <% end %><br />
-        <i>(変更しない場合は空白のままにしてください)</i>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder:"(6文字以上,変更しない場合は空白のままにしてください)" %>
       </div>
 
       <div class="field form-group">
@@ -36,12 +37,11 @@
 
       <div class="field form-group">
         <%= f.label :current_password, '現在のパスワード' %><br />
-        <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
-        <i>(プロフィールを変更する場合は必要になります)</i>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control', placeholder:"(プロフィールを変更する場合は必要になります)" %>
       </div>
 
-      <div class="actions mb-4">
-        <%= link_to "キャンセル", :back %>
+        <%= link_to "キャンセル", :back, class: "with" %>
+      <div class="btn-default user-edit-btn">
         <%= f.submit "変更を保存する" %>
       </div>
     <% end %>
