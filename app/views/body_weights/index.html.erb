@@ -93,12 +93,12 @@
       <div class='form-wrapper weight-new-form'>
         <%= form_with model: [@user, @body_weight], local: true do |f| %>
           <div>
-          <%= f.label :day, '日付'%>
+          <%= f.label :day, 'Date'%>
           <%= f.date_field :day, value: Date.today%>
           </div>
 
           <div>
-          <%= f.label :weight, '体重'%>
+          <%= f.label :weight, 'Weight'%>
           <%= f.number_field :weight, step: '0.1' %><span> kg</span>
           </div>
 

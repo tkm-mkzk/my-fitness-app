@@ -4,7 +4,7 @@
 
     <div class='form-header'>
       <h1 class='form-header-text'>
-        ログイン
+        Login
       </h1>
     </div>
 
@@ -12,23 +12,23 @@
 
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">メールアドレス</label>
+        <label class="form-text">Email</label>
       </div>
-      <%= f.email_field :email, class:"input-default form-control", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      <%= f.email_field :email, class:"input-default form-control", id:"email", placeholder:"Both PC and cell phones are acceptable.", autofocus: true %>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">パスワード</label>
+        <label class="form-text">Password</label>
       </div>
       <%= f.password_field :password, class:"input-default form-control", id:"password", placeholder:"" %>
     </div>
     <div class='login-btn btn-default'>
-      <%= f.submit "ログイン" ,class:"login-btn" %>
+      <%= f.submit "Login" ,class:"login-btn" %>
     </div>
   <% end %>
   <div>
-    まだアカウントをお持ちではありませんか？
-    <p class='with'><%= link_to "一緒に始めよう。", new_user_registration_path %></p>
+    Don't have an account yet?
+    <p class='with'><%= link_to "We'll start together", new_user_registration_path %></p>
   </div>
   </div>
 <div>

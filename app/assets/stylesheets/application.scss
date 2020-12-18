@@ -488,22 +488,18 @@ template {
   display: none;
 }
 
-* {
-  margin:0;
-  padding:0;
-}
 
-// 全般
-.container {
-  margin: 0;
-  padding: 0;
-}
 
 // フラッシュメッセージ //
 #flash-message{
   position: fixed;
   width: 100%;
   z-index: 100;
+}
+
+// ページネーション
+.pagination {
+  justify-content: center;
 }
 
 //フォーム関連//
@@ -634,8 +630,95 @@ template {
 }
 
 // ユーザー詳細ページ
-.user-show {
+.top-wrapper {
   margin-top: 100px;
+  text-align: center;
+}
+
+.my-edit-btn {
+  margin: 10px 0;
+}
+
+.my-page-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.weight-wrapper {
+  margin-top: 20px;
+  line-height: 60px;
+}
+
+.weight-box {
+  border: solid;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.weight-box {
+  border: solid;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+
+.big3-heading {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.record {
+  font-size: xx-large;
+}
+
+.body-weight-color {
+  background-color: white;
+}
+
+.big3-color {
+  background-color: white;
+}
+
+.bench-press-color {
+  background-color:white;
+}
+
+.dead-lift-color {
+  background-color: white;
+}
+
+.squat-color {
+  background-color: white;
+}
+
+.blogs {
+  margin-bottom: 10px;
+}
+
+.footer-margin {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.page-heading {
+  font-weight: bold;
+  font-size: large;
+  margin: 10px;
+}
+
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.no-hit {
+  width: 100%;
+  text-align: center;
 }
 
 // ユーザー編集ページ
@@ -649,9 +732,49 @@ template {
   text-align: center;
 }
 
-.blogs {
-  display: flex;
-  min-width: 100px;
+// ブログ作成
+.menu {
+  margin-top: 15px;
+}
+
+// ブログ詳細
+.blog-show {
+  margin-top: 100px;
+}
+
+.show-blog-title {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.target_site {
+  margin-top: 30px;
+}
+
+.show-content {
+  margin: 10px auto;
+}
+
+.show-img {
+  margin: 20px 0;
+}
+
+.header-margin {
+  margin-top: 100px;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.orchid {
+  background-color: whitesmoke;
+  width: 50%;
+  margin-bottom: 10px;
 }
 
 // 重さ

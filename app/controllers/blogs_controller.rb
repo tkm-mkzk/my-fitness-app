@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :move_to_index, only: :edit
 
   def index
-    @blogs = Blog.all.page(params[:page]).order('created_at DESC')
+    @blogs = Blog.all.page(params[:page]).per(12).order('created_at DESC')
   end
 
   def new

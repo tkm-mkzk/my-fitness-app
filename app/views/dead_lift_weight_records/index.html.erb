@@ -93,12 +93,12 @@
       <div class='form-wrapper weight-new-form'>
         <%= form_with model: [@user, @dead_lift_weight_record], local: true do |f| %>
           <div>
-          <%= f.label :dead_lift_day, '日付'%>
+          <%= f.label :dead_lift_day, 'Date'%>
           <%= f.date_field :dead_lift_day, value: Date.today%>
           </div>
 
           <div>
-          <%= f.label :dead_lift_weight, '体重'%>
+          <%= f.label :dead_lift_weight, 'Weight'%>
           <%= f.number_field :dead_lift_weight, step: '0.5' %><span> kg</span>
           </div>
 

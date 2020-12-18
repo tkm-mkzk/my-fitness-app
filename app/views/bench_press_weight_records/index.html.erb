@@ -93,12 +93,12 @@
       <div class='form-wrapper weight-new-form'>
         <%= form_with model: [@user, @bench_press_weight_record], local: true do |f| %>
           <div>
-          <%= f.label :bench_press_day, '日付'%>
+          <%= f.label :bench_press_day, 'Date'%>
           <%= f.date_field :bench_press_day, value: Date.today%>
           </div>
 
           <div>
-          <%= f.label :bench_press_weight, '体重'%>
+          <%= f.label :bench_press_weight, 'Weight'%>
           <%= f.number_field :bench_press_weight, step: '0.5' %><span> kg</span>
           </div>
 

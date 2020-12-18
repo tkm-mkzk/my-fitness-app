@@ -12,42 +12,42 @@
 
       <div class="form-group"">
         <div class="weight-bold-text">
-          画像
+          image
         </div>
         <div class="click-upload">
           <p>
-            クリックしてファイルをアップロード
+            Click to upload the file
           </p>
           <%= f.file_field :image, id:"item-image" %>
         </div>
       </div>
 
       <div class="form-group"">
-        <%= f.label :title, 'タイトル' %>(<span class="indispensable">必須</span>)
-        <%= f.text_field :title, placeholder: 'タイトルを入力してください', class: 'form-control' %>
+        <%= f.label :title, 'Title' %>(<span class="indispensable">Required contents</span>)
+        <%= f.text_field :title, placeholder: 'Please enter a title', class: 'form-control' %>
       </div>
 
       <div class="checkbox">
-        <%= f.label :target_site, '鍛えた部位'%>(1つ以上<span class="indispensable">必須</span>)<br>
+        <%= f.label :target_site, 'Target site'%>(<span class="indispensable">Required contents</span>)<br>
           <div class="form-inline">
-            <%= f.check_box :target_site, {multiple: true}, "胸", nil %>胸　
-            <%= f.check_box :target_site, {multiple: true}, "腕", nil %>腕　
-            <%= f.check_box :target_site, {multiple: true}, "肩", nil %>肩　
-            <%= f.check_box :target_site, {multiple: true}, "腹", nil %>腹　
-            <%= f.check_box :target_site, {multiple: true}, "背中", nil %>背中　
-            <%= f.check_box :target_site, {multiple: true}, "脚", nil %>脚　
-            <%= f.check_box :target_site, {multiple: true}, "その他", nil %>その他　
+            <%= f.check_box :target_site, {multiple: true}, "chest", nil %>chest　
+            <%= f.check_box :target_site, {multiple: true}, "arm", nil %>arm　
+            <%= f.check_box :target_site, {multiple: true}, "shoulder", nil %>shoulder　
+            <%= f.check_box :target_site, {multiple: true}, "abdominal", nil %>abdominal　
+            <%= f.check_box :target_site, {multiple: true}, "back", nil %>back　
+            <%= f.check_box :target_site, {multiple: true}, "leg", nil %>leg　
+            <%= f.check_box :target_site, {multiple: true}, "other", nil %>other　
           </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :content, 'メニューの方法' %>(<span class="indispensable">必須</span>)
-        <%= f.text_area :content, placeholder: 'メニューや感想を入力してください', class: 'form-control' %>
+        <%= f.label :content, 'Menu and impressions' %>(<span class="indispensable">Required contents</span>)
+        <%= f.text_area :content, placeholder: 'Please enter your menu and impressions', class: 'form-control' %>
       </div>
 
-        <%= link_to 'キャンセル', root_path, class: "with" %>
+        <%= link_to 'Cancel', root_path, class: "with" %>
       <div class="btn-default blog-btn">
-        <%= f.submit "投稿する" %>
+        <%= f.submit "Post" %>
       </div>
     <% end %>
   </div>
