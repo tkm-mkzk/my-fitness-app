@@ -492,7 +492,7 @@ template {
 
 // フラッシュメッセージ //
 #flash-message{
-  position: fixed;
+  margin-top: 70px;
   width: 100%;
   z-index: 100;
 }
@@ -510,7 +510,7 @@ template {
 }
 
 .signup-form {
-  margin: 130px 0 0 15px;
+  margin: 80px 0 0 15px;
 }
 
 .to-login {
@@ -518,15 +518,15 @@ template {
 }
 
 .login-form {
-  margin: 130px 0 0 15px;
+  margin: 80px 0 0 15px;
 }
 
 .blog-new-form {
-  margin: 130px 0 0 15px;
+  margin: 80px 0 0 15px;
 }
 
 .blog-edit-form {
-  margin: 130px 0 0 15px;
+  margin: 80px 0 0 15px;
 }
 
 .form-wrap {
@@ -543,6 +543,11 @@ template {
 }
 
 .with {
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.post-btn:hover {
   font-weight: bold;
 }
 
@@ -578,7 +583,6 @@ template {
 }
 
 // トップ
-/* ----- 背景用の動画ファイル ----- */
 #bg-video{
   position: fixed;
   right: 0;
@@ -591,10 +595,10 @@ template {
   background: url('men.jpg') no-repeat;
   background-size: cover;
 }
- /* ----- 背景の上に表示させたいコンテンツ ----- */
+
 .header-title{
-  position: relative; /*必ず必要*/
-  z-index: 2; /*必ず必要*/
+  position: relative;
+  z-index: 2;
   display: flex;
   width: 50%;
   justify-content: center;
@@ -718,7 +722,7 @@ template {
 
 .page-heading {
   font-weight: bold;
-  font-size: large;
+  font-size: xx-large;
   margin: 10px;
 }
 
@@ -797,16 +801,6 @@ template {
   margin-bottom: 10px;
 }
 
-// 重さ
-.weight-page {
-  margin-top: 100px;
-}
-
-.weight-title {
-  font-size: 40px;
-  font-weight: bold;
-}
-
 //ボタンの設定//
 .btn-default{
   display: inline-block;
@@ -842,26 +836,13 @@ template {
   }
 }
 
-.login-btn {
-  background-color: rgb(63, 63, 63);
-  border-radius: 5px;
-  color: white;
-}
-
-.register-btn {
-  background-color: rgb(63, 63, 63);
-  border-radius: 5px;
-  color: white;
-}
-
 .login-btn, .register-btn, .blog-btn, .user-edit-btn {
   background-color: rgb(63, 63, 63);
   border-radius: 5px;
   color: white;
 }
 
-
-//------------------体重管理-------------------//
+// weight管理
 .weight-new-form{
   width: fit-content;
   background-color: white;
@@ -993,55 +974,12 @@ template {
   background-color: rgba(0,0,0,0.5);
 }
 
-//イメージ
-#img_field {
-  font-size: 15px;
-  margin-top: 10px;
-  padding: 5px 8px;
-  border: solid 1px #EDBC6C;
-  color: #666;
-  position: relative;
-  padding: 0;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 400px;
-  height: 250px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #fff;
-  overflow: hidden;
-  box-sizing: border-box;
-  transition: 0.3s ease-out;
+.weight-page {
+  margin-top: 80px;
+  margin-bottom: 60px;
 }
 
-#img_field i {
-  font-size: 100px;
-  color: #aaa;
-  line-height: 250px;
-  transition: 0.3s ease-out;
-}
-
-#img_field i.add {
-  display: none;
-  font-size: 50px;
-  position: absolute;
-  top: -90px;
-  right: 15px;
-}
-
-#img_field:hover {
-  background-color: #EDBC6C;
-  transition: 0.3s ease-out;
-  opacity: 0.9;
-}
-
-#img_field:hover i {
-  transition: 0.3s ease-out;
-  display: block;
-  color: #fff;
-}
-
-.bottom {
-  margin-bottom: 80px;
+.weight-title {
+  font-size: 40px;
+  font-weight: bold;
 }

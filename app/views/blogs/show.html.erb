@@ -46,8 +46,8 @@
     <% if user_signed_in? %>
       <%= form_with(model: [@blog, @comment],local: true) do |f|%>
         <div>
-          <%= f.label :text, "Comment", class: "bold" %><br />
-          <%= f.text_field :text, class: "orchid" %>
+          <%= f.label :text, "✦Comment form", class: "bold" %><br />
+          <%= f.text_field :text, class: "orchid", placeholder: "Please enter a comment." %>
         </div>
         <div class="btn-default blog-btn">
           <%= f.submit "Send" %>
