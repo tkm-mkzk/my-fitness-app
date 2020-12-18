@@ -36,7 +36,7 @@
                 <th>Date</th>
                 <th class='text-center'>Weight</th>
                 <th>Comp</th>
-                <th>del</th>
+                <th>Del</th>
               </tr>
             </thead>
             <tbody>
@@ -98,8 +98,8 @@
           </div>
 
           <div>
-          <%= f.label :dead_lift_weight, 'Weight'%>
-          <%= f.number_field :dead_lift_weight, step: '0.5' %><span> kg</span>
+          <%= f.label :dead_lift_weight, 'Dead lift weight'%>
+          <%= f.number_field :dead_lift_weight, step: '0.5', placeholder:"Example) 80" %><span> kg</span>
           </div>
 
           <div class='text-right'>
