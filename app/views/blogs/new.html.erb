@@ -30,13 +30,13 @@
       <div class="checkbox">
         <%= f.label :target_site, 'Target site'%>(<span class="indispensable">Required contents</span>)<br>
           <div class="form-inline">
-            <%= f.check_box :target_site, {multiple: true}, "chest", nil %>chest　
-            <%= f.check_box :target_site, {multiple: true}, "arm", nil %>arm　
-            <%= f.check_box :target_site, {multiple: true}, "shoulder", nil %>shoulder　
-            <%= f.check_box :target_site, {multiple: true}, "abdominal", nil %>abdominal　
-            <%= f.check_box :target_site, {multiple: true}, "back", nil %>back　
-            <%= f.check_box :target_site, {multiple: true}, "leg", nil %>leg　
-            <%= f.check_box :target_site, {multiple: true}, "other", nil %>other　
+            <span><%= f.check_box :target_site, {multiple: true}, "chest", nil %>chest　</span>
+            <span><%= f.check_box :target_site, {multiple: true}, "arm", nil %>arm　</span>
+            <span><%= f.check_box :target_site, {multiple: true}, "shoulder", nil %>shoulder　</span>
+            <span><%= f.check_box :target_site, {multiple: true}, "abdominal", nil %>abdominal　</span>
+            <span><%= f.check_box :target_site, {multiple: true}, "back", nil %>back　</span>
+            <span><%= f.check_box :target_site, {multiple: true}, "leg", nil %>leg　</span>
+            <span><%= f.check_box :target_site, {multiple: true}, "other", nil %>other　</span>
           </div>
       </div>
 
@@ -45,9 +45,11 @@
         <%= f.text_area :content, placeholder: 'Please enter your menu and impressions', class: 'form-control' %>
       </div>
 
-        <%= link_to 'Cancel', root_path, class: "with" %>
-      <div class="btn-default blog-btn">
-        <%= f.submit "Post" %>
+      <div class='btn-group'>
+          <%= link_to 'Cancel', root_path, class: "with" %>
+        <div class="btn-default blog-btn post-btn">
+          <%= f.submit "Post" %>
+        </div>
       </div>
     <% end %>
   </div>
