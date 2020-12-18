@@ -12,7 +12,7 @@
 
       <div class="form-group"">
         <div class="weight-bold-text">
-          image
+          ✦image
         </div>
         <div class="click-upload">
           <p>
@@ -23,12 +23,12 @@
       </div>
 
       <div class="form-group"">
-        <%= f.label :title, 'Title' %>(<span class="indispensable">Required contents</span>)
+        <%= f.label :title, '✦Title' %>(<span class="indispensable">Required contents</span>)
         <%= f.text_field :title, placeholder: 'Please enter a title', class: 'form-control' %>
       </div>
 
       <div class="checkbox">
-        <%= f.label :target_site, 'Target site'%>(<span class="indispensable">Required contents</span>)<br>
+        <%= f.label :target_site, '✦Target site'%>(<span class="indispensable">Required contents</span>)<br>
           <div class="form-inline">
             <span><%= f.check_box :target_site, {multiple: true}, "chest", nil %>chest　</span>
             <span><%= f.check_box :target_site, {multiple: true}, "arm", nil %>arm　</span>
@@ -40,13 +40,13 @@
           </div>
       </div>
 
-      <div class="form-group">
-        <%= f.label :content, 'Menu and impressions' %>(<span class="indispensable">Required contents</span>)
+      <div class="form-group menu">
+        <%= f.label :content, '✦Menu and impressions' %>(<span class="indispensable">Required contents</span>)
         <%= f.text_area :content, placeholder: 'Please enter your menu and impressions', class: 'form-control' %>
       </div>
 
       <div class='btn-group'>
-          <%= link_to 'Cancel', root_path, class: "with" %>
+          <%= link_to 'Cancel', root_path, class: "post-btn" %>
         <div class="btn-default blog-btn post-btn">
           <%= f.submit "Post" %>
         </div>
