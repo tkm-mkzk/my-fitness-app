@@ -19,6 +19,13 @@
   <div class="show-content">
     <%= @blog.content %>
   </div>
+  <div class='card-user-content'>
+    <%= link_to "Contributor：#{@blog.user.nickname}", user_path(@blog.user) %>
+  </div>
+  <div>
+    Posted date：<%= @blog.created_at.to_s(:date_jp)%>
+  </div>
+
 
   <div>
     <% if user_signed_in? %>
