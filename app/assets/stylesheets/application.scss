@@ -488,17 +488,18 @@ template {
   display: none;
 }
 
-// 全般
-.container {
-  margin-top: 80px;
-}
+
 
 // フラッシュメッセージ //
 #flash-message{
   position: fixed;
   width: 100%;
   z-index: 100;
-  text-align: center;
+}
+
+// ページネーション
+.pagination {
+  justify-content: center;
 }
 
 //フォーム関連//
@@ -508,9 +509,282 @@ template {
   border-radius: 1em;
 }
 
+.signup-form {
+  margin: 130px 0 0 40px;
+}
+
+.login-form {
+  margin: 130px 0 0 40px;
+}
+
+.blog-new-form {
+  margin: 130px 0 0 40px;
+}
+
+.blog-edit-form {
+  margin: 130px 0 0 40px;
+}
+
+.form-wrap {
+  width: 60%;
+}
+
+.form-header-text {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.input-default {
+  border-color: black;
+}
+
+.with {
+  font-weight: bold;
+}
+
+.indispensable {
+  color: red;
+}
+
+
+// ヘッダー
+.header {
+  position: fixed;
+  top: 0;
+  opacity: 0.55;
+  width: 100%;
+  z-index:1000;
+}
+
+
 // フッター
 .footer {
   padding: 5px;
+  font-size: 15px;
+  opacity: 0.55;
+  z-index:1000;
+}
+
+// トップ
+/* ----- 背景用の動画ファイル ----- */
+#bg-video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background: url('men.jpg') no-repeat;
+  background-size: cover;
+}
+ /* ----- 背景の上に表示させたいコンテンツ ----- */
+.header-title{
+  position: relative; /*必ず必要*/
+  z-index: 2; /*必ず必要*/
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+  margin-top: 200px;
+  font-size: 89px;
+  color:white;
+}
+
+.wrap {
+  position: relative;
+}
+
+.explanation {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color:white;
+}
+
+.link {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  color:white;
+  margin-bottom: 200px;
+}
+
+// ユーザー詳細ページ
+.top-wrapper {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.my-edit-btn {
+  margin: 10px 0;
+}
+
+.my-page-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.weight-wrapper {
+  margin-top: 20px;
+  line-height: 60px;
+}
+
+.weight-box {
+  border: solid;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.weight-box {
+  border: solid;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+
+.big3-heading {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.record {
+  font-size: xx-large;
+}
+
+.body-weight-color {
+  background-color: white;
+}
+
+.big3-color {
+  background-color: white;
+}
+
+.bench-press-color {
+  background-color:white;
+}
+
+.dead-lift-color {
+  background-color: white;
+}
+
+.squat-color {
+  background-color: white;
+}
+
+.blogs {
+  margin-bottom: 10px;
+}
+
+.footer-margin {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.page-heading {
+  font-weight: bold;
+  font-size: large;
+  margin: 10px;
+}
+
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.no-hit {
+  width: 100%;
+  text-align: center;
+}
+
+// ユーザー編集ページ
+.user-edit-form {
+  margin: 130px 0 0 40px;
+}
+
+// ブログ関係
+.new-blogs-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+// ブログ作成
+.menu {
+  margin-top: 15px;
+}
+
+// ブログ詳細
+.blog-show {
+  margin-top: 100px;
+}
+
+.show-blog-title {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.target_site {
+  margin-top: 30px;
+}
+
+.show-content {
+  margin: 10px auto;
+}
+
+.show-img {
+  margin: 20px 0;
+}
+
+.header-margin {
+  margin-top: 100px;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.orchid {
+  background-color: whitesmoke;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+// 重さ
+.weight-page {
+  margin-top: 100px;
+}
+
+.weight-title {
+  font-size: 40px;
+  font-weight: bold;
 }
 
 //ボタンの設定//
@@ -547,39 +821,26 @@ template {
     transform: scale(0.95);
   }
 }
-.blue-outline-btn{
-  border-color: #3368ff;
-  font-weight: bold;
-  border-radius: 10px;
-  &:hover{
-    background-color: #3368ff;
-    color: #fff;
-    box-shadow: 0px 0px 3px black;
-  }
-  &:active{
-    box-shadow: 0px 0px 0px black;
-    transform: scale(0.95);
-  }
+
+.login-btn {
+  background-color: rgb(63, 63, 63);
+  border-radius: 5px;
+  color: white;
 }
 
-.cancel-round-btn{
-  background-color: #fff;
-  font-weight: bold ;
-  border-radius: 50rem ;
-  color: #737373;
-  border-color: #737373;
-  text-decoration: none;
-  &:hover{
-    color: #fff;
-    background-color: #737373;
-    border-color: #737373;
-    text-decoration: none;
-  }
-  &:active{
-    -webkit-transform: translate(0px, 2px);
-            transform: translate(0px, 2px);
-  }
+.register-btn {
+  background-color: rgb(63, 63, 63);
+  border-radius: 5px;
+  color: white;
 }
+
+.login-btn, .register-btn, .blog-btn, .user-edit-btn {
+  background-color: rgb(63, 63, 63);
+  border-radius: 5px;
+  color: white;
+}
+
+
 
 
 //------------------体重管理-------------------//

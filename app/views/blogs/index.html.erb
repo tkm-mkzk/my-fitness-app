@@ -1,11 +1,38 @@
+<% if user_signed_in?%>
+<div class="header-margin page-heading text-center">
+  New blogs
+</div>
 <div class='container'>
-  <div class="row blog justify-content-center">
+  <div class="blog">
     <% if @blogs.count == 0 %>
-      <div class = 'no-hit '>
-        <p>日記は見つかりません</p>
+      <div class='no-hit text-center'>
+        <p>No data</p>
       </div>
     <% else %>
-      <%= render @blogs %>
+        <%= render @blogs %>
     <% end %>
   </div>
+  <div class="footer-margin">
+    <%= paginate @blogs %>
+  </div>
 </div>
+<% else %>
+<div class='top-page'>
+  <div class="wrap">
+  <video id="bg-video" src="/videos/training.mp4" poster="men.jpg" autoplay loop muted></video>
+    <div class="header-title">
+      <p>
+        Let's record<br> on this<br>
+        Big3Blog.
+      </p>
+    </div>
+  </div>
+  <p class='explanation'>
+    With this app, you can keep track of your body weight, bench press, deadlift, squat, and post your training records as a blog.
+  </p>
+  <div class='link'>
+    <%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
+    <%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %>
+  <div>
+<div>
+<% end %>

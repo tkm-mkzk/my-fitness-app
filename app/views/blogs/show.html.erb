@@ -1,59 +1,66 @@
 <div class="blog-show text-center">
-  <div class="blog-box">
-    <h2 class="name">
-      <%= @blog.title %>
-    </h2>
+  <div class="show-blog-title">
+    <%= @blog.title %>
+  </div>
+  <div class="show-img">
     <% if @blog.image.present? %>
-      <div class='blog-img-content'>
-        <%= image_tag @blog.image, class: "blog-img", width: '30%' %>
+      <div>
+        <%= image_tag @blog.image, width: '30%' %>
       </div>
     <% else %>
-      <div class='blog-img-content'>
-        <%= image_tag 'no_image.png', class: "blog-img", width: '30%' %>
+      <div>
+        <%= image_tag 'no_image.png', width: '30%' %>
       </div>
     <% end %>
-    <div class="blog-target-site-box">
-      <span class="blog-target-site">
-        鍛えた部位：<%= @blog.target_site %>
-      </span>
-    </div>
+  </div>
+  <div clas="target_site">
+    Target_site：<span class="bold"><%= @blog.target_site %></span>
+  </div>
+  <div class="show-content">
+    <%= @blog.content %>
+  </div>
+
+  <div>
+    <% if user_signed_in? %>
+      <% if current_user.id == @blog.user.id %>
+      <div class="btn-default blog-btn">
+        <%= link_to 'Edit', edit_blog_path(@blog.id), method: :get %>
+      </div>
+      <div class="btn-default blog-btn">
+        <%= link_to 'Del', blog_path(@blog.id), method: :delete %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+  <div class="comment-form">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@blog, @comment],local: true) do |f|%>
+        <div>
+          <%= f.label :text, "Comment", class: "bold" %><br />
+          <%= f.text_field :text, class: "orchid" %>
+        </div>
+        <div class="btn-default blog-btn">
+          <%= f.submit "Send" %>
+        </div>
+      <% end %>
+    <% end %>
     <div>
-      <span class="blog-postage">
-        <%= @blog.content %>
-      </span>
+    Comments
     </div>
-
-    <div class="btn">
-      <% if user_signed_in? %>
-        <% if current_user.id == @blog.user.id %>
-          <%= link_to '編集', edit_blog_path(@blog.id), method: :get, class: 'btn btn-default btn-secondary' %>
-          <%= link_to '削除', blog_path(@blog.id), method: :delete, class: 'btn btn-default btn-secondary' %>
+    <ul class="comments text-center">
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <li class="comments_list list-unstyled">
+            <%= comment.text %><br>
+            <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id),method: :get %>
+          </li>
         <% end %>
+      <% elsif %>
+        No comment
       <% end %>
-    </div>
-
-    <div class="blog__comments">
-      <% if user_signed_in? %>
-        <%= form_with(model: [@blog, @comment],local: true) do |f|%>
-          <div class="field">
-            <%= f.label :text, "コメント" %><br />
-            <%= f.text_field :text %>
-          </div>
-          <div class="actions">
-            <%= f.submit "送信する", class: 'btn btn-default btn-secondary'  %>
-          </div>
-        <% end %>
-      <% end %>
-      <ul class="comments_lists">
-        <% if @comments %>
-          <% @comments.each do |comment| %>
-            <li class="comments_list list-unstyled">
-              <%= comment.text %>
-              <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id),method: :get, class: :comment_user %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div>
+    </ul>
   </div>
 </div>

@@ -8,8 +8,9 @@ class User < ApplicationRecord
   has_many :dead_lift_weight_records, dependent: :destroy
   has_many :squat_weight_records, dependent: :destroy
 
-  validates :nickname, presence: true
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :nickname, presence: true
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Password Include both letters and numbers' }
 end

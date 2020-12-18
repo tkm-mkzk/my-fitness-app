@@ -1,11 +1,11 @@
 <div class='col-xl-4 col-md-6'>
-  <div class='card' >
+  <div class='card'>
     <div class='card-body text-center'>
-      <%= link_to blog_path(blog.id) do %>
+      <%= link_to blog_path(blog.id), class: 'non-link-decoration' do %>
         <div class='card-title'>
           <%= blog.title %>
         </div>
-        <div class="card-img-top" id='img'>
+        <div class="card-img-top">
           <% if blog.image.present? %>
             <div>
               <%= image_tag blog.image, class: "blog-img", width: '80%' %>
@@ -16,7 +16,7 @@
             </div>
           <% end %>
         </div>
-          <div class='card-target_site'>鍛えた部位
+          <div class='card-target_site'>Target site
             <%= blog.target_site %>
           </div>
           <p class='card-content'>
@@ -24,11 +24,11 @@
           </p>
           <div class='card-user'>
             <div class='card-user-content'>
-                <span><%= blog.user.nickname%></span>
+                <span>	Contributor：<%= blog.user.nickname%></span>
             </div>
           </div>
           <p>
-            投稿日：<%= blog.created_at.to_s(:date_jp)%>
+            Posted date：<%= blog.created_at.to_s(:date_jp)%>
           </p>
       <% end %>
     </div>
