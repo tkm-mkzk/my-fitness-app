@@ -13,26 +13,25 @@ class UsersController < ApplicationController
     @dead_lift_weight_records = @user.dead_lift_weight_records.all
     @squat_weight_records = @user.squat_weight_records.all
 
-    if @current_bench_press_weight[0] == nil
-    a = 0
-      else
-    a = @current_bench_press_weight[0].bench_press_weight
-    end
+    a = if @current_bench_press_weight[0].nil?
+          0
+        else
+          @current_bench_press_weight[0].bench_press_weight
+        end
 
-    if @current_squat_weight[0]  == nil
-    b = 0
-      else
-    b = @current_squat_weight[0].squat_weight
-    end
+    b = if @current_squat_weight[0].nil?
+          0
+        else
+          @current_squat_weight[0].squat_weight
+        end
 
-    if @current_dead_lift_weight[0] == nil
-    c = 0
-      else
-    c = @current_dead_lift_weight[0].dead_lift_weight
-    end
+    c = if @current_dead_lift_weight[0].nil?
+          0
+        else
+          @current_dead_lift_weight[0].dead_lift_weight
+        end
 
     @total_big3 = a + b + c
-
   end
 
   def edit
