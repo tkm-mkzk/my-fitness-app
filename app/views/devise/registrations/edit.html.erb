@@ -40,9 +40,11 @@
         <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control', placeholder:"(This is required if you want to change your profile.)" %>
       </div>
 
+      <div class='btn-group'>
         <%= link_to "Cancel", :back, class: "with" %>
-      <div class="btn-default user-edit-btn">
-        <%= f.submit "Save changes" %>
+        <div class="btn-default user-edit-btn">
+          <%= f.submit "Save changes" %>
+        </div>
       </div>
     <% end %>
   </div>

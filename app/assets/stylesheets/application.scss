@@ -510,7 +510,7 @@ template {
 }
 
 .signup-form {
-  margin: 130px 0 0 40px;
+  margin: 130px 0 0 15px;
 }
 
 .to-login {
@@ -518,19 +518,19 @@ template {
 }
 
 .login-form {
-  margin: 130px 0 0 40px;
+  margin: 130px 0 0 15px;
 }
 
 .blog-new-form {
-  margin: 130px 0 0 40px;
+  margin: 130px 0 0 15px;
 }
 
 .blog-edit-form {
-  margin: 130px 0 0 40px;
+  margin: 130px 0 0 15px;
 }
 
 .form-wrap {
-  width: 60%;
+  width: 95%;
 }
 
 .form-header-text {
@@ -555,17 +555,25 @@ template {
 .header {
   position: fixed;
   top: 0;
-  opacity: 0.55;
+  opacity: 0.7;
   width: 100%;
   z-index:1000;
 }
 
+.nav-link:hover {
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  font-weight: bold;
+  opacity: 0.9;
+}
 
 // フッター
 .footer {
   padding: 5px;
   font-size: 15px;
-  opacity: 0.55;
+  opacity: 0.7;
   z-index:1000;
 }
 
@@ -725,6 +733,10 @@ template {
   text-align: center;
 }
 
+.comment-form {
+  margin-bottom: 50px;
+}
+
 // ユーザー編集ページ
 .user-edit-form {
   margin: 130px 0 0 40px;
@@ -739,6 +751,10 @@ template {
 // ブログ作成
 .menu {
   margin-top: 15px;
+}
+
+.btn-group {
+  margin-bottom: 50px;
 }
 
 // ブログ詳細
@@ -845,8 +861,6 @@ template {
 }
 
 
-
-
 //------------------体重管理-------------------//
 .weight-new-form{
   width: fit-content;
@@ -908,7 +922,7 @@ template {
   margin: auto;
 }
 .weight-table{
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin: auto;
   width: 100%;
 }
