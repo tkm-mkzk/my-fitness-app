@@ -12,26 +12,26 @@
 
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">Nickname(<span class="indispensable">Required contents</span>)</label>
+        <label class="form-text">✦Nickname(<span class="indispensable">Required contents</span>)</label>
       </div>
       <%= f.text_field :nickname, class:"input-default form-control", id:"nickname", placeholder:"Example) muscleTaro", autofocus: true %>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">Email(<span class="indispensable">Required contents</span>)</label>
+        <label class="form-text">✦Email(<span class="indispensable">Required contents</span>)</label>
       </div>
       <%= f.email_field :email, class:"input-default form-control", id:"email", placeholder:"Both PC and cell phones are acceptable", autofocus: true %>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">Password(<span class="indispensable">Required contents</span>)</label>
+        <label class="form-text">✦Password(<span class="indispensable">Required contents</span>)</label>
       </div>
       <%= f.password_field :password, class:"input-default form-control", id:"password", placeholder:"6 or more single-byte alphanumeric characters" %>
       <p class='info-text'>※Please include both letters and numbers in your settings</p>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">Confirmation password(<span class="indispensable">Required contents</span>)</label>
+        <label class="form-text">✦Confirmation password(<span class="indispensable">Required contents</span>)</label>
       </div>
       <%= f.password_field :password_confirmation, class:"input-default form-control", id:"password-confirmation", placeholder:"Please enter the same password" %>
     </div>
@@ -41,7 +41,7 @@
   <% end %>
   <div>
     Already have an account?
-    <p class='with to-login'><%= link_to "Login", new_user_session_path %></p>
+    <p class='with'><%= link_to "Login", new_user_session_path %></p>
   </div>
   </div>
 </div>

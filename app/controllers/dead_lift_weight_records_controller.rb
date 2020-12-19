@@ -33,7 +33,7 @@ class DeadLiftWeightRecordsController < ApplicationController
   def update
     @dead_lift_weight = DeadLiftWeightRecord.find(params[:id])
     if @dead_lift_weight.update(dead_lift_weight_params)
-      return redirect_to user_dead_lift_weight_records_path(@user), notice: 'Edited'
+      return redirect_to user_dead_lift_weight_records_path(@user), notice: 'Successfully edited'
     end
 
     redirect_to user_dead_lift_weight_records_path(@user), flash: { alert: 'Editing failed', error_messages: @dead_lift_weight_record.errors.full_messages }

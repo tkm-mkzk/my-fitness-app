@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @blogs = @user.blogs.order(updated_at: :desc).page(params[:page]).per(3)
+    @blogs = @user.blogs.order(updated_at: :desc).page(params[:page]).per(6)
     @current_body_weight = @user.body_weights.order(updated_at: :desc).limit(1)
     @current_bench_press_weight = @user.bench_press_weight_records.order(updated_at: :desc).limit(1)
     @current_dead_lift_weight = @user.dead_lift_weight_records.order(updated_at: :desc).limit(1)

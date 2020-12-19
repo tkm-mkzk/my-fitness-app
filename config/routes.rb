@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
+
+  devise_scope :user do
+    get "sign_in", :to => "users/sessions#new"
+    get "sign_out", :to => "users/sessions#destroy"
+    get 'users', to: 'users/registrations#new'
+  end
+
   root 'blogs#index'
 
   resources :blogs do
@@ -13,5 +22,7 @@ Rails.application.routes.draw do
     resources :dead_lift_weight_records, only: [:index, :create, :update, :destroy]
     resources :squat_weight_records, only: [:index, :create, :update, :destroy]
   end
+
+  resources :users, only: :show
 
 end
