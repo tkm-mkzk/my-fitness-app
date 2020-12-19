@@ -30,7 +30,9 @@ class SquatWeightRecordsController < ApplicationController
 
   def update
     @squat_weight = SquatWeightRecord.find(params[:id])
-    return redirect_to user_squat_weight_records_path(@user), notice: 'Successfully edited' if @squat_weight.update(squat_weight_params)
+    if @squat_weight.update(squat_weight_params)
+      return redirect_to user_squat_weight_records_path(@user), notice: 'Successfully edited'
+    end
 
     redirect_to user_squat_weight_records_path(@user), flash: { alert: 'Editing failed', error_messages: @squat_weight_record.errors.full_messages }
   end

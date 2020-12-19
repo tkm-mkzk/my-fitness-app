@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     if @blog.valid?
       @blog.save
-      redirect_to root_path, notice: "Successfully posted."
+      redirect_to root_path, notice: 'Successfully posted.'
     else
       flash.now[:alert] = 'Posting failed.'
       flash.now[:error_messages] = @blog.errors.full_messages
