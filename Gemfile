@@ -75,3 +75,6 @@ gem 'gon'
 
 # ページネーション
 gem 'kaminari'
+
+# AWS S3
+gem "aws-sdk-s3", require: false
