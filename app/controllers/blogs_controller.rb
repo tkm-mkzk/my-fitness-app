@@ -15,8 +15,10 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     if @blog.valid?
       @blog.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Successfully posted."
     else
+      flash.now[:alert] = 'Posting failed.'
+      flash.now[:error_messages] = @blog.errors.full_messages
       render :new
     end
   end
@@ -31,8 +33,10 @@ class BlogsController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      redirect_to blog_path(@blog.id)
+      redirect_to blog_path(@blog.id), notice: 'Successfully edited.'
     else
+      flash.now[:alert] = 'Editing failed.'
+      flash.now[:error_messages] = @blog.errors.full_messages
       render :edit
     end
   end

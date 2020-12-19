@@ -492,9 +492,10 @@ template {
 
 // フラッシュメッセージ //
 #flash-message{
-  margin-top: 70px;
+  position: fixed;
+
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
 }
 
 // ページネーション
@@ -547,6 +548,10 @@ template {
   font-weight: bold;
 }
 
+.save-btn:hover {
+  font-weight: bold
+}
+
 .indispensable {
   color: red;
 }
@@ -578,7 +583,7 @@ template {
   z-index:1000;
 }
 
-// トップ
+
 #bg-video{
   position: fixed;
   right: 0;
@@ -593,25 +598,20 @@ template {
 }
 
 .header-title{
-  position: relative;
-  z-index: 2;
   display: flex;
   width: 50%;
   justify-content: center;
-  align-items: center;
   text-align:center;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 145px;
   font-size: 89px;
   color:white;
 }
 
-.wrap {
-  position: relative;
-}
+
 
 .explanation {
-  position: relative;
+
   z-index: 2;
   display: flex;
   width: 60%;
@@ -718,7 +718,7 @@ template {
 
 .page-heading {
   font-weight: bold;
-  font-size: xx-large;
+  font-size: x-large;
   margin: 10px;
 }
 
@@ -832,10 +832,19 @@ template {
   }
 }
 
-.login-btn, .register-btn, .blog-btn, .user-edit-btn {
+.login-btn, .register-btn, .blog-btn, .user-edit-btn, .edit-btn {
   background-color: rgb(63, 63, 63);
   border-radius: 5px;
   color: white;
+}
+
+.blog-btn:hover {
+  font-weight: bold;
+  color: rgb(0, 140, 255);
+}
+
+.edit-btn:hover {
+  color: green;
 }
 
 // weight管理

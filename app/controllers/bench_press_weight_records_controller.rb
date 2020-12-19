@@ -33,7 +33,7 @@ class BenchPressWeightRecordsController < ApplicationController
   def update
     @bench_press_weight = BenchPressWeightRecord.find(params[:id])
     if @bench_press_weight.update(bench_press_weight_params)
-      return redirect_to user_bench_press_weight_records_path(@user), notice: 'Edited'
+      return redirect_to user_bench_press_weight_records_path(@user), notice: 'Successfully edited'
     end
 
     redirect_to user_bench_press_weight_records_path(@user), flash: { alert: 'Editing failed', error_messages: @bench_press_weight_record.errors.full_messages }

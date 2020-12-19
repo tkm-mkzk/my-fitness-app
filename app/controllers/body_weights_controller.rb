@@ -30,7 +30,7 @@ class BodyWeightsController < ApplicationController
 
   def update
     @body_weight = BodyWeight.find(params[:id])
-    return redirect_to user_body_weights_path(@user), notice: 'Edited' if @body_weight.update(weight_params)
+    return redirect_to user_body_weights_path(@user), notice: 'Successfully edited' if @body_weight.update(weight_params)
 
     redirect_to user_body_weights_path(@user), flash: { alert: 'Editing failed', error_messages: @body_weight.errors.full_messages }
   end
