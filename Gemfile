@@ -78,3 +78,8 @@ gem 'kaminari'
 
 # AWS S3
 gem "aws-sdk-s3", require: false
+
+# Unicornのインストール
+group :production do
+  gem 'unicorn', '5.4.1'
+end
