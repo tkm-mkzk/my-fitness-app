@@ -22,7 +22,7 @@
           <%= link_to 'Squat', user_squat_weight_records_path(current_user), class: "dropdown-item" %>
         </div>
       </li>
-      <li><%= link_to 'My page', user_path(current_user), class: "nav-link active" %></li>
+      <li><%= link_to "#{current_user.nickname}'s page", user_path(current_user), class: "nav-link active" %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link active" %></li>
     <% else %>
       <li><%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
