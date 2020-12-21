@@ -16,9 +16,12 @@
           <p>
             Click to upload the file
           </p>
-          <%= f.file_field :image, id:"item-image" %>
+          <%= f.file_field :image %>
         </div>
+        <div id="image-list"></div>
       </div>
+
+      <%= image_tag @blog.image, class: 'preview-img', id: 'image' if @blog.image.present? %>
 
       <div class="form-group"">
         <%= f.label :title, '✦Title' %>(<span class="indispensable">Required contents</span>)
