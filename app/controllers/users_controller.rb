@@ -45,10 +45,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_private
+    @user = User.find(params[:id])
+    @user.private = !@user.private
+    @user.save
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :email)
+    params.require(:user).permit(:nickname, :email, :private)
   end
 
   def set_user
