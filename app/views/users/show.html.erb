@@ -29,7 +29,11 @@
       <div class="weight-box big3-color">
         <div class="current-body-weight">
           Total current big3 weight<br>
-          <span class="record"><%= @total_big3 %></span>kg
+          <% if @total_big3 == 0 %>
+            No data
+          <% else %>
+            <span class="record"><%= @total_big3 %></span>kg
+          <% end %>
         </div>
       </div>
     </div>
