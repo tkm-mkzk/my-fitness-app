@@ -10,7 +10,6 @@ RSpec.describe SquatWeightRecord, type: :model do
       it 'squat_weight,squat_dayが存在すれば投稿できること' do
         expect(@squat_weight_record).to be_valid
       end
-
     end
 
     context 'スクワットを記録できない時' do
@@ -43,7 +42,6 @@ RSpec.describe SquatWeightRecord, type: :model do
         @squat_weight_record.valid?
         expect(@squat_weight_record.errors.full_messages).to include('Squat weight must be greater than 0')
       end
-
     end
   end
 end

@@ -10,11 +10,9 @@ RSpec.describe BodyWeight, type: :model do
       it 'weight,dayが存在すれば投稿できること' do
         expect(@body_weight).to be_valid
       end
-
     end
 
     context '体重を記録できない時' do
-
       it 'weightが空ではコメントできないこと' do
         @body_weight.weight = nil
         @body_weight.valid?
@@ -44,7 +42,6 @@ RSpec.describe BodyWeight, type: :model do
         @body_weight.valid?
         expect(@body_weight.errors.full_messages).to include('Weight must be greater than 0')
       end
-
     end
   end
 end

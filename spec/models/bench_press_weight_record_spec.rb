@@ -10,7 +10,6 @@ RSpec.describe BenchPressWeightRecord, type: :model do
       it 'bench_press_weight,bench_press_dayが存在すれば投稿できること' do
         expect(@bench_press_weight_record).to be_valid
       end
-
     end
 
     context 'ベンチプレスを記録できない時' do
@@ -43,7 +42,6 @@ RSpec.describe BenchPressWeightRecord, type: :model do
         @bench_press_weight_record.valid?
         expect(@bench_press_weight_record.errors.full_messages).to include('Bench press weight must be greater than 0')
       end
-
     end
   end
 end

@@ -10,7 +10,6 @@ RSpec.describe DeadLiftWeightRecord, type: :model do
       it 'dead_lift_weight,dead_lift_dayが存在すれば投稿できること' do
         expect(@dead_lift_weight_record).to be_valid
       end
-
     end
 
     context 'デッドリフトを記録できない時' do
@@ -43,7 +42,6 @@ RSpec.describe DeadLiftWeightRecord, type: :model do
         @dead_lift_weight_record.valid?
         expect(@dead_lift_weight_record.errors.full_messages).to include('Dead lift weight must be greater than 0')
       end
-
     end
   end
 end
