@@ -25,7 +25,7 @@
       <li><%= link_to "#{current_user.nickname}'s page", user_path(current_user), class: "nav-link active" %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link active" %></li>
     <% else %>
-      <li><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "nav-link active" %></li>
+      <li><%= link_to 'Guest login (for browsing)', users_guest_sign_in_path, method: :post, class: "nav-link active" %></li>
       <li><%= link_to "Log in", new_user_session_path, class: "nav-link active" %></li>
       <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %></li>
     <% end %>

@@ -14,10 +14,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Password Include both letters and numbers' }, on: :create
 
   def self.guest
-    find_or_create_by!(nickname: 'guest', email: 'guest@example.com') do |user|
+    find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
   end
