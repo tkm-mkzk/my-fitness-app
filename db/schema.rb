@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_055244) do
   end
 
   create_table "bench_press_weight_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "bench_press_weight", null: false
-    t.date "bench_press_day", null: false
+    t.float "bench_press_weight"
+    t.date "bench_press_day"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_055244) do
   end
 
   create_table "body_weights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "weight", null: false
-    t.date "day", null: false
+    t.float "weight"
+    t.date "day"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_055244) do
   end
 
   create_table "dead_lift_weight_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "dead_lift_weight", null: false
-    t.date "dead_lift_day", null: false
+    t.float "dead_lift_weight"
+    t.date "dead_lift_day"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_055244) do
   end
 
   create_table "squat_weight_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "squat_weight", null: false
-    t.date "squat_day", null: false
+    t.float "squat_weight"
+    t.date "squat_day"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
