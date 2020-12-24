@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :blog do
-    title       { 'エニタイムフィットネス千歳烏山店でのトレーニング' }
-    target_site { '腕、胸' }
-    content     { '今日は胸周りの筋肉を中心にトレーニングを実施。ベンチプレスやインクラインダンベルプレス、ケーブルプレス、アームカールを行った。' }
+    title       { Faker::Lorem.sentence }
+    target_site { 'arm' }
+    content     { Faker::Lorem.sentence }
     association :user
 
     after(:build) do |blog|

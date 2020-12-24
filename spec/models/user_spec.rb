@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'ユーザー新規登録できる時' do
-      it 'nicknameとemail、passwordとpassword_confirmationが存在すれば登録できること' do
+      it 'nicknameとemail、passwordとpassword_confirmation, privateが存在すれば登録できること' do
         expect(@user).to be_valid
       end
     end
@@ -68,6 +68,12 @@ RSpec.describe User, type: :model do
         @user.password = '111111'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid. Password Include both letters and numbers')
+      end
+
+      it 'privateが空では登録できないこと' do
+        @user.private = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Private can't be blank")
       end
     end
   end

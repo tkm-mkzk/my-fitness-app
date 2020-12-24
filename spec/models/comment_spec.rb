@@ -10,7 +10,6 @@ RSpec.describe Comment, type: :model do
       it 'textが存在すれば投稿できること' do
         expect(@comment).to be_valid
       end
-
     end
 
     context 'コメントできない時' do
@@ -18,7 +17,6 @@ RSpec.describe Comment, type: :model do
         @comment.text = nil
         @comment.valid?
         expect(@comment.errors.full_messages).to include("Text can't be blank")
-
       end
     end
   end

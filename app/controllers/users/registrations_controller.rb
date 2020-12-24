@@ -5,7 +5,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :check_guest, only: %i[update destroy]
 
-
   # GET /resource/sign_up
   # def new
   #   super
@@ -61,9 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def check_guest
-    if resource.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。'
-    end
+    redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。' if resource.email == 'guest@example.com'
   end
 
   # The path used after sign up.
