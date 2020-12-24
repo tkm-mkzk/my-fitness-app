@@ -16,20 +16,20 @@
             </div>
           <% end %>
         </div>
-          <div class='card-target_site'>Target site
-            <%= blog.target_site %>
+        <div class='card-target_site'>Target site
+          <%= blog.target_site %>
+        </div>
+        <p class='card-content'>
+          <%= blog.content %>
+        </p>
+        <div class='card-user'>
+          <div class='card-user-content'>
+              <span>	Contributor：<%= blog.user.nickname%></span>
           </div>
-          <p class='card-content'>
-            <%= blog.content %>
-          </p>
-          <div class='card-user'>
-            <div class='card-user-content'>
-                <span>	Contributor：<%= blog.user.nickname%></span>
-            </div>
-          </div>
-          <p>
-            Posted date：<%= blog.created_at.to_s(:date_jp)%>
-          </p>
+        </div>
+        <p>
+          Posted date：<%= blog.created_at.to_s(:date_jp)%>
+        </p>
       <% end %>
     </div>
   </div>
