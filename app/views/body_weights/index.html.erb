@@ -11,13 +11,13 @@
         <div class='chart-box'>
           <span class=chart-label>kg</span>
           <div class='weight-chart active daily-chart' id='daily-chart'>
-            <%= chart_graph(@user, @dailychart_range) %>
+            <%= body_chart_graph(@user, @dailychart_range) %>
           </div>
           <div class='weight-chart weekly-chart' id='weekly-chart'>
-            <%= chart_graph(@user, @weeklychart_range) %>
+            <%= body_chart_graph(@user, @weeklychart_range) %>
           </div>
           <div class='weight-chart monthly-chart' id='monthly-chart'>
-            <%= chart_graph(@user, @monthlychart_range) %>
+            <%= body_chart_graph(@user, @monthlychart_range) %>
           </div>
         </div>
       </div>

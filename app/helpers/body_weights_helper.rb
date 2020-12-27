@@ -12,7 +12,7 @@ module BodyWeightsHelper
   end
 
   # チャート表示用
-  def chart_graph(user, range)
+  def body_chart_graph(user, range)
     chart_max = max_value(user, range)
     chart_min = min_value(user, range)
     line_chart user.body_weights.group_by_day(:day, range: range, series: false).average(:weight), min: chart_min, max: chart_max, points: false
