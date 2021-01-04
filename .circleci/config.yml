@@ -1,19 +1,15 @@
-version: 2
+version: 2.1
+orbs:
+  ruby: circleci/ruby@0.1.2 
+
 jobs:
-  deploy:
-    machine:
-      enabled: true
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    executor: ruby/default
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "5a:e4:d6:cf:ab:e5:86:42:60:b2:b5:f6:ab:2f:59:93" #上記メモったハッシュを指定
-      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/my-fitness-app/deploy-me.sh"
- 
-workflows:
-  version: 2
-  deploy:
-    jobs:
-      - deploy:
-          filters:
-            branches:
-              only: master
+      - checkout
+      - run:
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
