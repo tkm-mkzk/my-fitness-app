@@ -9,14 +9,12 @@
     </div>
 
       <div class="img-upload form-group">
-        <div class="weight-bold-text">
+        <div class="weight-bold-text image-tag">
           ✦image
         </div>
         <div class="click-upload">
-          <p>
-            Click to upload the file
-          </p>
-          <%= f.file_field :image %>
+          <%= f.label :image, "Upload the image", class: "btn-default2 blog-btn" %>
+          <%= f.file_field :image, class: "image_form" %>
         </div>
         <div id="image-list"></div>
       </div>
@@ -45,9 +43,8 @@
         <%= f.label :content, '✦Menu and impressions' %>(<span class="indispensable">Required contents</span>)
         <%= f.text_area :content, class: 'form-control'%>
       </div>
-
         <%= link_to 'Cancel', blog_path(@blog), class: "with" %>
-      <div class=" btn-default blog-btn">
+      <div class="btn-default blog-btn">
         <%= f.submit "Edit" %>
       </div>
     <% end %>
