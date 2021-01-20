@@ -87,6 +87,10 @@ www.big3blog.com (トップページからゲストログインすることが�
 - CircleCIを使った自動デプロイ
 - いいね機能
 
+## AWS構成図
+
+![AWS](https://user-images.githubusercontent.com/71067058/105130416-56538400-5b2a-11eb-9594-dac2cb299904.png)
+
 ## データベース設計
 
 ![big3blog_er drawio](https://user-images.githubusercontent.com/71067058/103068139-deb03900-45ff-11eb-8df3-43d21df2c048.png)
